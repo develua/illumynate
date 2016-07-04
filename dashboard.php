@@ -1,11 +1,11 @@
 <?php include('header.php'); ?>
 <?php include('sidebar.php'); ?>
 <?php
-$select_total='select count(id) as counts from tbl_socail_url where user_id="'.$useremail.'" and social_type="instagram"';
+$select_total='select count(id) as counts from tbl_social_url where user_id="'.$useremail.'" and social_type="instagram"';
 $fetch_total=mysql_query($select_total);
 $fetch_total_num_ins=mysql_fetch_array($fetch_total);
 
-$select_total_poc='select count(id) as counts from tbl_socail_url where user_id="'.$useremail.'" and social_type="pocket"';
+$select_total_poc='select count(id) as counts from tbl_social_url where user_id="'.$useremail.'" and social_type="pocket"';
 $fetch_total_poc=mysql_query($select_total_poc);
 $fetch_total_num_poc=mysql_fetch_array($fetch_total_poc);
 ?>

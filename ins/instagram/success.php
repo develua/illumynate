@@ -57,7 +57,7 @@ function fetchData($url){
   //print_r($result);
   foreach ($result->data as $post) {
   
-  $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$post->images->standard_resolution->url.'" and social_type="instagram" and sub_type="post_images"');
+  $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->images->standard_resolution->url.'" and social_type="instagram" and sub_type="post_images"');
   $numrows=mysql_num_rows($fetch_exist_url);
   if($numrows>0)
   {
@@ -66,10 +66,10 @@ function fetchData($url){
   else
   {
   //echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
-  mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'")');
+  mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'")');
   }
   
-  $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$post->user->profile_picture.'" and social_type="instagram" and sub_type="profile_pic"');
+  $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->user->profile_picture.'" and social_type="instagram" and sub_type="profile_pic"');
   $numrows=mysql_num_rows($fetch_exist_url);
   if($numrows>0)
   {
@@ -78,7 +78,7 @@ function fetchData($url){
   else
   {
   //echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
-  mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","profile_pic","'.$post->user->profile_picture.'")');
+  mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","profile_pic","'.$post->user->profile_picture.'")');
   }
   
   
@@ -175,7 +175,7 @@ if (true === isset($_GET['error']))
                 <h3 class="page-header" style="margin-top: 10px; padding:20px">Profile Picture</h3>
                  <div class="col-lg-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
@@ -195,7 +195,7 @@ if (true === isset($_GET['error']))
                <h3 class="page-header" style="margin-top: 10px; padding:20px">Post Images</h3>
                <div class="col-lg-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
