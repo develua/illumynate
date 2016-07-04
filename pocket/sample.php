@@ -63,11 +63,11 @@ if (isset($_GET['authorized'])) {
         {
            // echo $item['resolved_title'].'<br/>'; 
            // echo "<a href='".$item['resolved_url']."'><img src='".$obj::getImg()."' style='height:200px; width:25%;'/></a><br/>";
-            $select_exist=mysql_query('select tbl_socail_url.id from tbl_socail_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_socail_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_socail_url.user_id="'.$useremail.'"');
+            $select_exist=mysql_query('select tbl_social_url.id from tbl_social_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_social_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_social_url.user_id="'.$useremail.'"');
             $fetch_exist=mysql_num_rows($select_exist);
             if($fetch_exist<=0)
             {
-                $query='insert into tbl_socail_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","'.$obj::getImg().'","'.date('Y-m-d h:i:s').'")';
+                $query='insert into tbl_social_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","'.$obj::getImg().'","'.date('Y-m-d h:i:s').'")';
                 mysql_query($query);
                 $id=mysql_insert_id();
                 $pocket_query='insert into tbl_pocket_data(tbl_social_id,user_id,resolved_url,resolved_tag,created_at) values("'.$id.'","'.$useremail.'","'.$item['resolved_url'].'","'.$item['resolved_title'].'","'.date('Y-m-d h:i:s').'")';
@@ -79,11 +79,11 @@ if (isset($_GET['authorized'])) {
            // echo $item['resolved_title'].'<br/>'; 
            // echo "<a href='".$item['resolved_url']."'><img src='".$item['image']['src']."' style='height:200px; width:25%;'/></a><br/>";
             
-            $select_exist=mysql_query('select tbl_socail_url.id from tbl_socail_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_socail_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_socail_url.user_id="'.$useremail.'"');
+            $select_exist=mysql_query('select tbl_social_url.id from tbl_social_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_social_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_social_url.user_id="'.$useremail.'"');
             $fetch_exist=mysql_num_rows($select_exist);
             if($fetch_exist<=0)
             {
-                $query='insert into tbl_socail_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","'.$item['image']['src'].'","'.date('Y-m-d h:i:s').'")';
+                $query='insert into tbl_social_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","'.$item['image']['src'].'","'.date('Y-m-d h:i:s').'")';
                 mysql_query($query);
                 $id=mysql_insert_id();
                 $pocket_query='insert into tbl_pocket_data(tbl_social_id,user_id,resolved_url,resolved_tag,created_at) values("'.$id.'","'.$useremail.'","'.$item['resolved_url'].'","'.$item['resolved_title'].'","'.date('Y-m-d h:i:s').'")';
@@ -94,11 +94,11 @@ if (isset($_GET['authorized'])) {
         {
            // echo $item['resolved_title'].'<br/>'; 
            // echo "<a href='".$item['resolved_url']."'><img src='http://codetrash/assets/images/sains.png' style='height:200px; width:25%;'/></a><br/>";
-            $select_exist=mysql_query('select tbl_socail_url.id from tbl_socail_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_socail_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_socail_url.user_id="'.$useremail.'"');
+            $select_exist=mysql_query('select tbl_social_url.id from tbl_social_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_social_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_social_url.user_id="'.$useremail.'"');
             $fetch_exist=mysql_num_rows($select_exist);
             if($fetch_exist<=0)
             {
-                $query='insert into tbl_socail_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","https://www.mirrorservice.org/sites/gutenberg.org/2/6/6/5/26656/26656-page-images/p0052-blank.png","'.date('Y-m-d h:i:s').'")';
+                $query='insert into tbl_social_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","https://www.mirrorservice.org/sites/gutenberg.org/2/6/6/5/26656/26656-page-images/p0052-blank.png","'.date('Y-m-d h:i:s').'")';
                 mysql_query($query);
                 $id=mysql_insert_id();
                 $pocket_query='insert into tbl_pocket_data(tbl_social_id,user_id,resolved_url,resolved_tag,created_at) values("'.$id.'","'.$useremail.'","'.$item['resolved_url'].'","'.$item['resolved_title'].'","'.date('Y-m-d h:i:s').'")';
@@ -111,11 +111,11 @@ if (isset($_GET['authorized'])) {
         {
             //echo $item['resolved_title'].'<br/>'; 
             //echo "<a href='".$item['resolved_url']."'><img src='".$item['image']['src']."' style='height:200px; width:25%;'/></a><br/>";
-            $select_exist=mysql_query('select tbl_socail_url.id from tbl_socail_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_socail_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_socail_url.user_id="'.$useremail.'"');
+            $select_exist=mysql_query('select tbl_social_url.id from tbl_social_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_social_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_social_url.user_id="'.$useremail.'"');
             $fetch_exist=mysql_num_rows($select_exist);
             if($fetch_exist<=0)
             {
-              $query='insert into tbl_socail_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","'.$item['image']['src'].'","'.date('Y-m-d h:i:s').'")';
+              $query='insert into tbl_social_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","'.$item['image']['src'].'","'.date('Y-m-d h:i:s').'")';
               mysql_query($query);
               $id=mysql_insert_id();
               $pocket_query='insert into tbl_pocket_data(tbl_social_id,user_id,resolved_url,resolved_tag,created_at) values("'.$id.'","'.$useremail.'","'.$item['resolved_url'].'","'.$item['resolved_title'].'","'.date('Y-m-d h:i:s').'")';
@@ -126,12 +126,12 @@ if (isset($_GET['authorized'])) {
         {
             //echo $item['resolved_title'].'<br/>'; 
             //echo "<a href='".$item['resolved_url']."'><img src='http://codetrash/assets/images/sains.png' style='height:200px; width:25%;'/></a><br/>";
-            //echo 'insert into tbl_socail_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","http://codetrash/assets/images/sains.png","'.date('Y-m-d h:i:s').'")';
-            $select_exist=mysql_query('select tbl_socail_url.id from tbl_socail_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_socail_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_socail_url.user_id="'.$useremail.'"');
+            //echo 'insert into tbl_social_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","http://codetrash/assets/images/sains.png","'.date('Y-m-d h:i:s').'")';
+            $select_exist=mysql_query('select tbl_social_url.id from tbl_social_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_social_url.id where tbl_pocket_data.resolved_tag="'.$item['resolved_title'].'" and tbl_pocket_data.resolved_url="'.$item['resolved_url'].'" and tbl_social_url.user_id="'.$useremail.'"');
             $fetch_exist=mysql_num_rows($select_exist);
             if($fetch_exist<=0)
             {
-              $query='insert into tbl_socail_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","https://www.mirrorservice.org/sites/gutenberg.org/2/6/6/5/26656/26656-page-images/p0052-blank.png","'.date('Y-m-d h:i:s').'")';
+              $query='insert into tbl_social_url(user_id,social_type,sub_type,link,created_on) values("'.$useremail.'","pocket","data","https://www.mirrorservice.org/sites/gutenberg.org/2/6/6/5/26656/26656-page-images/p0052-blank.png","'.date('Y-m-d h:i:s').'")';
               mysql_query($query);
               $id=mysql_insert_id();
               $pocket_query='insert into tbl_pocket_data(tbl_social_id,user_id,resolved_url,resolved_tag,created_at) values("'.$id.'","'.$useremail.'","'.$item['resolved_url'].'","'.$item['resolved_title'].'","'.date('Y-m-d h:i:s').'")';
