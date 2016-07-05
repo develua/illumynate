@@ -48,7 +48,7 @@ else
             <tr>
             <td style="padding: 15px;font-size: 20px;height: 200px;">
             <strong>Hello '.$first_name.',</strong><br />
-                        Thanks for registering with illuMYnate, please click <a href="http://winnercodes.com/social.winnercodes.com/social/index.php?t='.base64_encode($email).'&ac='.base64_encode($active_code).'">here</a> to active your account.
+                        Thanks for registering with illuMYnate, please click <a href="http://illumynate.com/index.php?t='.base64_encode($email).'&ac='.base64_encode($active_code).'">here</a> to active your account.
             </td>
             </tr>
             </tbody>

@@ -44,7 +44,7 @@ if(isset($_REQUEST['update_profile']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Harmony - Free responsive Bootstrap admin template by Themestruck.com</title>
+	<title>illuMYnate - Your personalized hub for your digital lifestyle.</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -72,7 +72,7 @@ if(isset($_REQUEST['update_profile']))
 
 <body>
 	<div class="brand clearfix">
-		<a href="index.html" style="text-decoration: none!important;" class="logo"><font style="color: white; font-size: 16px;font-weight: bolder;">Social App</font></a>
+		<a href="index.html" style="text-decoration: none!important;" class="logo"><font style="color: white; font-size: 16px;font-weight: bolder;">illuMYnate</font></a>
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
 			<li><a href="help.html">Help</a></li>
