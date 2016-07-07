@@ -9,7 +9,7 @@ permissions:
      pattern: "**"
      owner: apache
      group: apache
-     mode: 777
+     mode: 755
      type:
        - file
 hooks:
