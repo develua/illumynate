@@ -53,7 +53,7 @@ else
             </tr>
             </tbody>
             <tfoot style="background-color: #4f5362;">
-            <tr><td style="padding: 15px;color: white; text-align: center;">@copyright illuMynate</td></tr>
+            <tr><td style="padding: 15px;color: white; text-align: center;">@copyright illuMYnate</td></tr>
             </tfoot>
             </table>
             </body>

@@ -39,7 +39,7 @@ $fetch_total_num_poc=mysql_fetch_array($fetch_total_poc);
 background-size: cover;">
 												<div class="stat-panel text-center">
 													<div class="stat-panel-number h1 ">0</div>
-													<div class="stat-panel-title text-uppercase">Total Pictures</div>
+													<div class="stat-panel-title text-uppercase">Total Recipes</div>
 												</div>
 											</div>
 											<a href="#" class="block-anchor panel-footer text-center">Pinterest<i class="fa fa-arrow-right"></i></a>
@@ -52,7 +52,7 @@ background-size: cover;">
 background-size: cover;">
 												<div class="stat-panel text-center">
 													<div class="stat-panel-number h1 "><?php echo $fetch_total_num_poc['counts'];?></div>
-													<div class="stat-panel-title text-uppercase">Total Pictures</div>
+													<div class="stat-panel-title text-uppercase">Total Articles</div>
 												</div>
 											</div>
 											<a href="pocket/" class="block-anchor panel-footer text-center">Pocket &nbsp; <i class="fa fa-arrow-right"></i></a>
