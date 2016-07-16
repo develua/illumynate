@@ -7,7 +7,7 @@ require_once('connect.php');
             
     if($useremail!=null || $useremail!="")
         {
-            header('location:profile.php');
+            header('location:dashboard.php');
         }
     /* Login Php Code Start */
     if(isset($_REQUEST['login']))
@@ -22,7 +22,7 @@ require_once('connect.php');
             if($fetch_user_data['status']==1)
             {
             $_SESSION['email']=$fetch_user_data['email'];    
-            header('location:profile.php');
+            header('location:dashboard.php');
             }
             elseif($fetch_user_data['status']==0)
             {
