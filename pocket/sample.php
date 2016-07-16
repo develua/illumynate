@@ -2,6 +2,9 @@
 <?php include('sidebar.php'); ?>
 <?php
 include('../connect.php');
+
+// Show all errors/warnings
+error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require('scrap.php');
 require('Pocket.php');
@@ -22,20 +25,20 @@ if (isset($_GET['authorized'])) {
         $user['access_token']   the user's access token for calls to Pocket
         $user['username']   the user's pocket username
     */
-//  print_r($user);
+  print_r($user);
 
     // Set the user's access token to be used for all subsequent calls to the Pocket API
     $pocket->setAccessToken($user['access_token']);
 
 //  echo NEWLINE;
 
-/*  
+ 
     $params = array(
-        'url' => 'https://github.com/gleek/', // required
-        'tags' => 'github'
+        'url' => 'illumynate.com/pocket/', // required
+        'tags' => 'illumynate'
     );
     print_r($pocket->add($params, $user['access_token']));
-*/
+
 //  echo NEWLINE;
 
     // Retrieve the user's list of unread items (limit 5)
@@ -46,7 +49,7 @@ if (isset($_GET['authorized'])) {
             'count' => 50
     );
     $items = $pocket->retrieve($params, $user['access_token']);
-    //print_r($items);
+    print_r($items);
    // die;
     $update='update users set pocket="1" where email="'.$useremail.'"';
     mysql_query($update);
@@ -181,7 +184,7 @@ if (isset($_GET['authorized'])) {
     {
     // Attempt to detect the url of the current page to redirect back to
     // Normally you wouldn't do this
-    $redirect = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTP']) ? 'https' : 'http') . '://'  . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?authorized=';
+    $redirect = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']) ? 'https' : 'http') . '://'  . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?authorized=';
 
     // Request a token from Pocket
     $result = $pocket->requestToken($redirect);
