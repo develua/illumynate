@@ -181,7 +181,7 @@ if (isset($_GET['authorized'])) {
     {
     // Attempt to detect the url of the current page to redirect back to
     // Normally you wouldn't do this
-    $redirect = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']) ? 'https' : 'http') . '://'  . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?authorized=';
+    $redirect = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTP']) ? 'https' : 'http') . '://'  . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?authorized=';
 
     // Request a token from Pocket
     $result = $pocket->requestToken($redirect);
