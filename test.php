@@ -21,7 +21,7 @@
             </tr>
             </tbody>
             <tfoot style="background-color: blue;">
-            <tr><td style="padding: 15px;color: white; text-align: center;">@copyright socialApp Test</td></tr>
+            <tr><td style="padding: 15px;color: white; text-align: center;">@copyright IlluMYnate Test</td></tr>
             </tfoot>
             </table>
             </body>

@@ -66,7 +66,7 @@ else
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
             
             // Additional headers
-            $headers .= '<info@socialApp.com>' . "\r\n";
+            $headers .= '<info@illuMYnate.com>' . "\r\n";
             
             // Mail it
             mail($to, $subject, $message, $headers);
