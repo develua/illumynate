@@ -564,7 +564,9 @@ li {
   }
 }
 .brand .logo img {
-  height: 20px;
+  height: 53px;
+  margin-top: 4px;
+  padding-left: 15px  ;
 }
 .brand .menu-btn {
   float: right;
