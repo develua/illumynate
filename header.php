@@ -71,7 +71,7 @@ if(isset($_REQUEST['update_profile']))
 
 <body>
 	<div class="brand clearfix">
-		<a href="index.html" style="text-decoration: none!important;" class="logo"><font style="color: white; font-size: 16px;font-weight: bolder;">Social App</font></a>
+		<a href="index.html" style="text-decoration: none!important;" class="logo"><img src"img/logos/Illumynate_homepage_header.png" title="illuMYnate"></a>
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
 			<li><a href="help.html">Help</a></li>
