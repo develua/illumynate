@@ -76,7 +76,7 @@ if(isset($_REQUEST['update_profile']))
 		<ul class="ts-profile-nav">
 			<li><a href="help.html">Help</a></li>
 			<li class="ts-account">
-				<a href="#"><?php if($fetch_user['profile_pic']!=null && $fetch_user['profile_pic']!=""){ echo '<img src="../../profile_pic/'.$fetch_user['profile_pic'].'" class="ts-avatar hidden-side" style="    max-width: 50px;" alt="">'; } else { echo '<img src="../../img/ts-avatar.jpg" class="ts-avatar hidden-side" alt="">'; }?><?php echo $fetch_user['first_name']." ".$fetch_user['last_name']; ?><i class="fa fa-angle-down hidden-side"></i></a>
+				<a href="#"><?php if($fetch_user['profile_pic']!=null && $fetch_user['profile_pic']!=""){ echo '<img src="../../profile_pic/'.$fetch_user['profile_pic'].'" class="ts-avatar hidden-side" style="    max-width: 50px;" alt="">'; } else { echo '<img src="../../img/Illum_icon_rounded.png" class="ts-avatar hidden-side" alt="">'; }?><?php echo $fetch_user['first_name']." ".$fetch_user['last_name']; ?><i class="fa fa-angle-down hidden-side"></i></a>
 				<ul>
 					<li><a href="../../profile.php">My Account</a></li>
 					<li><a href="../../changepassword.php">Change Password</a></li>
