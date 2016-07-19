@@ -199,10 +199,12 @@ if (isset($_GET['authorized'])) {
     );
     // To redirect back to us.
 //echo "</pre>";
-echo $result['redirect_uri'];
+//echo $result['redirect_uri'];
 //    header('Location: ' . $result['redirect_uri']);
     //echo '<script>window.location='.$result['redirect_uri'].';</script>';
-        
+  ?>
+  <script>window.location='<?php echo $result['redirect_uri'];?>';</script>
+  <?php
     }
 }
 ?>
