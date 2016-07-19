@@ -235,7 +235,7 @@ if (isset($_GET['authorized'])) {
                         <div class="col-md-12">
                           <hr style="size: 10px;"/>
                               <form method="post" action="">
-                                <button class='btn btn-info' type="submit" name="login">Sign in with Pocket</button>
+                                <button class='btn btn-info' type="submit" name="login">Hello,Sign in with Pocket</button>
                               </form>
                         </div>
                    </div>                       
