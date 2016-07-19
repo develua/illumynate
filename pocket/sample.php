@@ -175,7 +175,7 @@ if (isset($_GET['authorized'])) {
      }
       
     }
- header('location:index.php');  
+   echo '<script>window.location="index.php";</script>';
 } else {
     if(isset($_POST['login']))
     {
