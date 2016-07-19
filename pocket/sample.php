@@ -175,7 +175,7 @@ if (isset($_GET['authorized'])) {
      }
       
     }
-// header('location:index.php');  
+ header('location:index.php');  
 } else {
     if(isset($_POST['login']))
     {
