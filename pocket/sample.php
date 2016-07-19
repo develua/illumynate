@@ -1,6 +1,3 @@
-
-//sample.php
-
 <?php include('header.php'); ?>
 <?php include('sidebar.php'); ?>
 <?php
@@ -202,14 +199,12 @@ if (isset($_GET['authorized'])) {
     );
     // To redirect back to us.
 //echo "</pre>";
-    //header('Location: ' . $result['redirect_uri']);
-    echo '<script>window.location='.$result['redirect_uri'].';</script>';
+    header('Location: ' . $result['redirect_uri']);
+    //echo '<script>window.location='.$result['redirect_uri'].';</script>';
         
     }
 }
-
 ?>
-
 <style>
 .box-content {
     display: inline-block;
