@@ -21,6 +21,7 @@ if (true === isset($code)) {
 
   // Receive OAuth token object
   $data = $instagram->getOAuthToken($code);
+  alert($code);
   // Take a look at the API response
    
 if(empty($data->user->username))
