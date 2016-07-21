@@ -56,6 +56,8 @@ function fetchData($url){
   $result = fetchData("https://api.instagram.com/v1/users/$id/media/recent/?access_token=$token");
   $result = json_decode($result);
   print_r($result);
+  console.log(result);
+  //echo("<script>console.log(result);</script>");
   foreach ($result->data as $post) {
   
   $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->images->standard_resolution->url.'" and social_type="instagram" and sub_type="post_images"');
