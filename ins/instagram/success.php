@@ -55,8 +55,8 @@ function fetchData($url){
   }
   $result = fetchData("https://api.instagram.com/v1/users/$id/media/recent/?access_token=$token");
   $result = json_decode($result);
-  print_r($result);
-  console.log(result);
+  //print_r($result);
+  //console.log(result);
   //echo("<script>console.log(result);</script>");
   foreach ($result->data as $post) {
   
