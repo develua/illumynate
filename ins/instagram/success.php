@@ -55,7 +55,7 @@ function fetchData($url){
   }
   $result = fetchData("https://api.instagram.com/v1/users/$id/media/recent/?access_token=$token");
   $result = json_decode($result);
-  //print_r($result);
+  print_r($result);
   //console.log(result);
   //echo("<script>console.log(result);</script>");
   foreach ($result->data as $post) {
@@ -69,7 +69,7 @@ function fetchData($url){
   else
   {
   //echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
-  mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link,created_time,caption,users_in_photo) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'","'.$post->caption->created_time.'","'.$post->caption->text.'","'.$post->users_in_photo.'")');
+  mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link,created_time,caption,users_in_photo) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'","'.$post->caption->created_time.'","'.$post->caption->text.'","'.$post->users_in_photo->Array.'")');
   }
   
   $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->user->profile_picture.'" and social_type="instagram" and sub_type="profile_pic"');
