@@ -34,7 +34,7 @@ else
             $to  = $email;
             
             // subject
-            $subject = 'Activation link for IlluMYnate!';
+            $subject = 'Here is your activation link for IlluMYnate!';
             
             // message
             $message = '
@@ -48,12 +48,12 @@ else
             <tr>
             <td style="padding: 15px;font-size: 20px;height: 200px;">
             <strong>Hello '.$first_name.',</strong><br />
-                        Thanks for registering with illuMYnate, please click <a href="http://illumynate.com/index.php?t='.base64_encode($email).'&ac='.base64_encode($active_code).'">here</a> to active your account.
+                        Thanks for registering with illuMYnate, please click <a href="http://winnercodes.com/social.winnercodes.com/social/index.php?t='.base64_encode($email).'&ac='.base64_encode($active_code).'">here</a> to active your account.
             </td>
             </tr>
             </tbody>
             <tfoot style="background-color: #4f5362;">
-            <tr><td style="padding: 15px;color: white; text-align: center;">@copyright illuMYnate</td></tr>
+            <tr><td style="padding: 15px;color: white; text-align: center;">@copyright illuMynate</td></tr>
             </tfoot>
             </table>
             </body>
@@ -66,7 +66,7 @@ else
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
             
             // Additional headers
-            $headers .= '<info@illuMYnate.com>' . "\r\n";
+            $headers .= '<info@socialApp.com>' . "\r\n";
             
             // Mail it
             mail($to, $subject, $message, $headers);
@@ -87,7 +87,7 @@ else
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Harmony - Free responsive Bootstrap admin template by Themestruck.com</title>
+	<title>illuMYnate</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -106,10 +106,8 @@ else
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 
 </head>
 
@@ -177,12 +175,13 @@ else
         if(password!=cpassword)
         {
             e.preventDefault();
-            $('.error_msg').text("Password must be same");
+            $('.error_msg').text("Passwords do not match");
             $('.cpassword').focus();
         }
         });
     });
     </script>
+	 
 </body>
 
 </html>

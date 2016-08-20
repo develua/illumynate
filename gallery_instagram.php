@@ -37,7 +37,7 @@ function fetchData($url){
     // Do something with this data.
  
   echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
-  mysql_query('insert into tbl_social_url(user_id,social_type,link) value("'.$_SESSION['email'].'","instagram","'.$post->images->thumbnail->url.'")');
+  mysql_query('insert into tbl_socail_url(user_id,social_type,link) value("'.$_SESSION['email'].'","instagram","'.$post->images->thumbnail->url.'")');
   
   }
 

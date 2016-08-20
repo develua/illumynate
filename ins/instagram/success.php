@@ -21,7 +21,6 @@ if (true === isset($code)) {
 
   // Receive OAuth token object
   $data = $instagram->getOAuthToken($code);
-
   // Take a look at the API response
    
 if(empty($data->user->username))
@@ -55,12 +54,9 @@ function fetchData($url){
   }
   $result = fetchData("https://api.instagram.com/v1/users/$id/media/recent/?access_token=$token");
   $result = json_decode($result);
-  print_r($result);
-  //console.log(result);
-  //echo("<script>console.log(result);</script>");
   foreach ($result->data as $post) {
   
-  $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->images->standard_resolution->url.'" and social_type="instagram" and sub_type="post_images"');
+  $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$post->images->standard_resolution->url.'" and social_type="instagram" and sub_type="post_images"');
   $numrows=mysql_num_rows($fetch_exist_url);
   if($numrows>0)
   {
@@ -68,11 +64,32 @@ function fetchData($url){
   }
   else
   {
-  //echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
-  mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link,created_time,caption,users_in_photo) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'","'.$post->data->created_time.'","'.$post->caption->text.'","'.$post->location->name.'")');
+	  $address="";
+	  $lat="";
+	  $lng="";
+	  $text="";
+		if(isset($post->location->name))
+		  {
+			$address=$post->location->name;
+			$lat=$post->location->latitude; 
+			$lng=$post->location->longitude;  	
+		  }
+	  
+		if(isset($post->caption->text))
+		{
+			$text=$post->caption->text;
+		}
+	  //echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
+		mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link,caption) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'","'.$text.'")');
+		$lastInsertId=mysql_insert_id();
+		if(isset($post->location->name))
+		{
+			$queryLocation='insert into tbl_taged_location(tbl_social_id,address,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$lat.'","'.$lng.'")';
+			mysql_query($queryLocation);
+		}
   }
   
-  $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->user->profile_picture.'" and social_type="instagram" and sub_type="profile_pic"');
+  $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$post->user->profile_picture.'" and social_type="instagram" and sub_type="profile_pic"');
   $numrows=mysql_num_rows($fetch_exist_url);
   if($numrows>0)
   {
@@ -80,8 +97,27 @@ function fetchData($url){
   }
   else
   {
-  //echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
-  mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","profile_pic","'.$post->user->profile_picture.'")');
+		$address="";
+		$lat="";
+	    $lng="";
+		$text="";
+		if(isset($post->location->name))
+	    {
+			$address=$post->location->name;
+			$lat=$post->location->latitude; 
+			$lng=$post->location->longitude;  	
+		}
+		if(isset($post->caption->text))
+		{
+			$text=$post->caption->text;
+		}
+		mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","profile_pic","'.$post->user->profile_picture.'")');
+		$lastInsertId=mysql_insert_id();
+		if(isset($post->location->name))
+		{
+			$queryLocation='insert into tbl_taged_location(tbl_social_id,address,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$lat.'","'.$lng.'")';
+			mysql_query($queryLocation);
+		}
   }
   
   
@@ -164,63 +200,101 @@ if (true === isset($_GET['error']))
 
 		 
 	</style>
-		<div class="content-wrapper" style="margin-top: 15px;">
-		    <div class="col-lg-12">
-                   <h2 class="page-header">Instagram Photos Gallery</h2>
-         
-                    <strong><a href="index.php">Please Login Again For New Images</a></strong>
-                <hr />
+		<!--  Instagram Code Start -->
+    
+    <div class="content-wrapper" style="margin-top: 15px;">
+		    <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">
+                   <h2 class="page-header" style="padding: 10px;background: antiquewhite;">Instagram Gallery</h2>
+            <hr />
             </div>
-            
+            <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">
+                         <strong style="padding: 10px;"><a href="index.php">Please Login Again For New Images</a></strong>
+            </div>
             <div class="container-fluid">
             
 			<div class="row">
-                <h3 class="page-header" style="margin-top: 10px; padding:20px">Profile Picture</h3>
-                 <div class="col-lg-12">   
+            <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">
+            <h3 class="page-header" style="margin-top: 10px;padding: 10px;background: aliceblue;">Profile Picture</h3>
+            </div>
+                 <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
+                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
                     
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb"> 
-                        <a class="fancybox-buttons thumbnail" data-fancybox-group="button" href="<?php echo $fetch_exist_images['link']; ?>">
-                            <img class="img-responsive imagesss" src="<?php echo $fetch_exist_images['link']; ?>" alt="">
+                    <div class="col-lg-3 col-md-3 col-xs-12 col-xs-12 thumb"> 
+                        <div style="position: absolute;padding: 10px; display:none;" class="add_edit_tag">
+							<button class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i></button>
+							<button class="btn btn-xs btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+						</div>
+						<a class="fancybox-buttons thumbnail" data-fancybox-group="button" href="<?php echo $fetch_exist_images['link']; ?>">
+                            <img class="img-responsive imagesss" src="<?php echo $fetch_exist_images['link']; ?>" alt="" style="min-height: 300px; max-height: 300px;">
                         </a>
                     </div>
                    <?php
                    }
                    ?>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">
                     <hr />
                 </div> 
-               <h3 class="page-header" style="margin-top: 10px; padding:20px">Post Images</h3>
-               <div class="col-lg-12">   
+                <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">
+                     <h3 class="page-header" style="margin-top: 10px;padding: 10px;background: aliceblue;">Post Images</h3>
+                </div>
+               <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
+                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
                     
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb"> 
+                    <div class="col-lg-3 col-md-3 col-xs-12 col-xs-12 thumb">
+						<div style="position: absolute;padding: 10px; display:none;" class="add_edit_tag">
+							<button class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i></button>
+							<button class="btn btn-xs btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+						</div>					
                         <a class="fancybox-buttons thumbnail" data-fancybox-group="button" href="<?php echo $fetch_exist_images['link']; ?>">
-                            <img class="img-responsive imagesss" src="<?php echo $fetch_exist_images['link']; ?>" alt="">
+                            <img class="img-responsive imagesss" src="<?php echo $fetch_exist_images['link']; ?>" style="min-height: 300px; max-height: 300px;">
                         </a>
                     </div>
                    <?php
                    }
                    ?>
              </div>
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">
                 <hr />
             </div> 
              
         </div>
 		</div>
-	</div>
+	</div>    
+    <!--  Instagram Code End   -->     
           
-
+<!-- Add Tag Model Code Start -->         
+	
+	 <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" placeholder="Add tags" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+ 
+	<!-- Add Tag Mode Code End -->
 
 	<!-- Loading Scripts -->
 	<script src="../../js/jquery.min.js"></script>
@@ -232,7 +306,57 @@ if (true === isset($_GET['error']))
 	<script src="../../js/fileinput.js"></script>
 	<script src="../../js/chartData.js"></script>
 	<script src="../../js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.thumb').mouseenter(function(){
+				$(this).children('.add_edit_tag').show();
+			});
+			$('.thumb').mouseleave(function(){
+				$(this).children('.add_edit_tag').hide();
+			});
+		});
+	</script>
+	<script>
+	var data = ["Amsterdam",
+    "London",
+    "Paris",
+    "Washington",
+    "New York",
+    "Los Angeles",
+    "Sydney",
+    "Melbourne",
+    "Canberra",
+    "Beijing",
+    "New Delhi",
+    "Kathmandu",
+    "Cairo",
+    "Cape Town",
+    "Kinshasa"];
+var citynames = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: $.map(data, function (city) {
+        return {
+            name: city
+        };
+    })
+});
+citynames.initialize();
 
+$('.category-container > > input').tagsinput({
+    typeaheadjs: [{
+          minLength: 3,
+          highlight: true,
+    },{
+        minlength: 3,
+        name: 'citynames',
+        displayKey: 'name',
+        valueKey: 'name',
+        source: citynames.ttAdapter()
+    }],
+    freeInput: true
+});
+	</script>
 </body>
 
 </html>

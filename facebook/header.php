@@ -1,6 +1,4 @@
 <?php
-session_start();
-date_default_timezone_set('Asia/kolkata');
 $useremail=$_SESSION['email'];
 if($useremail==null || $useremail=="")
 {
@@ -87,4 +85,4 @@ if(isset($_REQUEST['update_profile']))
 		</ul>
 	</div>
 
-	s
+	

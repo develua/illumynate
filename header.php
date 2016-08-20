@@ -43,7 +43,7 @@ if(isset($_REQUEST['update_profile']))
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>illuMYnate - Your personalized dashboard to support your digital lifestyle.</title>
+	<title>illuMYnate</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

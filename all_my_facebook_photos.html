@@ -8,9 +8,11 @@
 		/**
 		 * This is the getPhoto library
 		 */
+
 		function makeFacebookPhotoURL( id, accessToken ) {
 			return 'https://graph.facebook.com/' + id + '/picture?access_token=' + accessToken;
 		}
+
 		function login( callback ) {
 			FB.login(function(response) {
 				if (response.authResponse) {
@@ -23,6 +25,7 @@
 				}
 			},{scope: 'user_photos'} );
 		}
+
 		function getAlbums( callback ) {
 			FB.api(
 					'/me/albums',
@@ -34,7 +37,9 @@
 						}
 					}
 				);
+
 		}
+
 		function getPhotosForAlbumId( albumId, callback ) {
 			FB.api(
 					'/'+albumId+'/photos',
@@ -47,6 +52,7 @@
 					}
 				);
 		}
+
 		function getLikesForPhotoId( photoId, callback ) {
 			FB.api(
 					'/'+albumId+'/photos/'+photoId+'/likes',
@@ -58,13 +64,18 @@
 					}
 				);
 		}
+
 		function getPhotos(callback) {
+
 			var allPhotos = [];
+
 			var accessToken = '';
+
 			login(function(loginResponse) {
 					accessToken = loginResponse.authResponse.accessToken || '';
 					getAlbums(function(albumResponse) {
 							var i, album, deferreds = {}, listOfDeferreds = [];
+
 							for (i = 0; i < albumResponse.data.length; i++) {
 								album = albumResponse.data[i];
 								deferreds[album.id] = $.Deferred();
@@ -82,6 +93,7 @@
 										deferreds[albumId].resolve();
 									});
 							}
+
 							$.when.apply($, listOfDeferreds ).then( function() {
 								if (callback) {
 									callback( allPhotos );
@@ -100,13 +112,16 @@
 		/**
 		 * This is the bootstrap / app script
 		 */
+
 		// wait for DOM and facebook auth
 		var docReady = $.Deferred();
 		var facebookReady = $.Deferred();
+
 		$(document).ready(docReady.resolve);
+
 		window.fbAsyncInit = function() {
 			FB.init({
-			  appId      : '1107992032576327',
+			  appId      : '1037512873011672',
 			  channelUrl : '//conor.lavos.local/channel.html',
 			  status     : true,
 			  cookie     : true,
@@ -114,17 +129,15 @@
 			});
 			facebookReady.resolve();
 		};
+
 		$.when(docReady, facebookReady).then(function() {
 			if (typeof getPhotos !== 'undefined') {
 				getPhotos( function( photos ) {
 					console.log( photos );
-				$.each(photos,function(key,value){
-                $('body').append('<img src=""http://graph.facebook.com/'+value['id']+'/picture"" style="height:100px;"><br/>');
-                $('body').append('<img src="'+value['url']+'" style="height:100px;"><br/>');
-                });
-                });
+				});
 			}
 		});
+
 		// call facebook script
 		(function(d){
 		 var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
@@ -132,10 +145,13 @@
 		 js.src = "http://connect.facebook.net/en_US/all.js";
 		 d.getElementsByTagName('head')[0].appendChild(js);
 		}(document));
+
 	</script>
 </head>
 <body>
 	<div id="fb-root"></div>
- 
 </body>
 </html>
+
+
+
