@@ -618,7 +618,7 @@ abstract class BaseFacebook
   public function getLoginUrl($params=array()) {
     $this->establishCSRFTokenState();
    // $currentUrl = $this->getCurrentUrl();
-    $currentUrl = 'http://winnercodes.com/social.winnercodes.com/social/facebook/success.php';
+    $currentUrl = 'http://illumynate.com/facebook/success.php';
     // if 'scope' is passed as an array, convert to comma separated list
     $scopeParams = isset($params['scope']) ? $params['scope'] : null;
     if ($scopeParams && is_array($scopeParams)) {
