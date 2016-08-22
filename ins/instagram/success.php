@@ -56,7 +56,7 @@ function fetchData($url){
   $result = json_decode($result);
   foreach ($result->data as $post) {
   
-  $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$post->images->standard_resolution->url.'" and social_type="instagram" and sub_type="post_images"');
+  $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->images->standard_resolution->url.'" and social_type="instagram" and sub_type="post_images"');
   $numrows=mysql_num_rows($fetch_exist_url);
   if($numrows>0)
   {
@@ -80,16 +80,16 @@ function fetchData($url){
 			$text=$post->caption->text;
 		}
 	  //echo "<img src=\"{$post->images->thumbnail->url}\"><br/><br/>";
-		mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link,caption) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'","'.$text.'")');
+		mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link,caption) value("'.$_SESSION['email'].'","instagram","post_images","'.$post->images->standard_resolution->url.'","'.$text.'")');
 		$lastInsertId=mysql_insert_id();
 		if(isset($post->location->name))
 		{
-			$queryLocation='insert into tbl_taged_location(tbl_social_id,address,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$lat.'","'.$lng.'")';
+			$queryLocation='insert into tbl_tagged_location(tbl_social_id,address,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$lat.'","'.$lng.'")';
 			mysql_query($queryLocation);
 		}
   }
   
-  $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$post->user->profile_picture.'" and social_type="instagram" and sub_type="profile_pic"');
+  $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$post->user->profile_picture.'" and social_type="instagram" and sub_type="profile_pic"');
   $numrows=mysql_num_rows($fetch_exist_url);
   if($numrows>0)
   {
@@ -111,11 +111,11 @@ function fetchData($url){
 		{
 			$text=$post->caption->text;
 		}
-		mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","profile_pic","'.$post->user->profile_picture.'")');
+		mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link) value("'.$_SESSION['email'].'","instagram","profile_pic","'.$post->user->profile_picture.'")');
 		$lastInsertId=mysql_insert_id();
 		if(isset($post->location->name))
 		{
-			$queryLocation='insert into tbl_taged_location(tbl_social_id,address,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$lat.'","'.$lng.'")';
+			$queryLocation='insert into tbl_tagged_location(tbl_social_id,address,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$lat.'","'.$lng.'")';
 			mysql_query($queryLocation);
 		}
   }
@@ -218,7 +218,7 @@ if (true === isset($_GET['error']))
             </div>
                  <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
@@ -244,7 +244,7 @@ if (true === isset($_GET['error']))
                 </div>
                <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>

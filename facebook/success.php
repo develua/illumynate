@@ -85,7 +85,7 @@ if ($user) {
   
       foreach ($album['photos']['data'] as $photo) {
                         
-          $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$photo['images'][0]['source'].'" and social_type="facebook" and sub_type="'.$album['name'].'"');
+          $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$photo['images'][0]['source'].'" and social_type="facebook" and sub_type="'.$album['name'].'"');
           $numrows=mysql_num_rows($fetch_exist_url);
           if($numrows>0)
           {
@@ -121,19 +121,19 @@ if ($user) {
 			  $lat=$photo['place']['location']['latitude'];
 			  $lng=$photo['place']['location']['longitude'];	
 		  }  
-          mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link,caption) value("'.$_SESSION['email'].'","facebook","'.$album['name'].'","'.$photo['images'][0]['source'].'","'.$photo['name'].'")');
+          mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link,caption) value("'.$_SESSION['email'].'","facebook","'.$album['name'].'","'.$photo['images'][0]['source'].'","'.$photo['name'].'")');
           
 		  $lastInsertId=mysql_insert_id();
 			if(isset($photo['place']))
 			{
-				$queryLocation='insert into tbl_taged_location(tbl_social_id,address,city,state,country,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$city.'","'.$state.'","'.$country.'","'.$lat.'","'.$lng.'")';
+				$queryLocation='insert into tbl_tagged_location(tbl_social_id,address,city,state,country,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$city.'","'.$state.'","'.$country.'","'.$lat.'","'.$lng.'")';
 				mysql_query($queryLocation);
 			}
 			if(isset($photo['tags']))
 			{
 				foreach($photo['tags']['data'] as $tagData)
 				{
-					$queryTags='insert into tbl_taged(tbl_social_id,tagedName) values("'.$lastInsertId.'","'.$tagData['name'].'")';
+					$queryTags='insert into tbl_tagged(tbl_social_id,tagedName) values("'.$lastInsertId.'","'.$tagData['name'].'")';
 					mysql_query($queryTags);	
 				}
 				
@@ -150,7 +150,7 @@ if ($user) {
   //Code For Taged Photo Start
   
   foreach ($data1['data'] as $photo) {
-          $fetch_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'" and link="'.$photo['images'][0]['source'].'" and social_type="facebook" and sub_type="Taged Images"');
+          $fetch_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'" and link="'.$photo['images'][0]['source'].'" and social_type="facebook" and sub_type="Taged Images"');
           $numrows=mysql_num_rows($fetch_exist_url);
           if($numrows>0)
           {
@@ -186,18 +186,18 @@ if ($user) {
 				  $lat=$photo['place']['location']['latitude'];
 				  $lng=$photo['place']['location']['longitude'];	
 			  }
-			mysql_query('insert into tbl_socail_url(user_id,social_type,sub_type,link,caption) value("'.$_SESSION['email'].'","facebook","Taged Images","'.$photo['images'][0]['source'].'","'.$photo['name'].'")');
+			mysql_query('insert into tbl_social_url(user_id,social_type,sub_type,link,caption) value("'.$_SESSION['email'].'","facebook","Taged Images","'.$photo['images'][0]['source'].'","'.$photo['name'].'")');
 			$lastInsertId=mysql_insert_id();
 			if(isset($photo['place']))
 			{
-				$queryLocation='insert into tbl_taged_location(tbl_social_id,address,city,state,country,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$city.'","'.$state.'","'.$country.'","'.$lat.'","'.$lng.'")';
+				$queryLocation='insert into tbl_tagged_location(tbl_social_id,address,city,state,country,lat,lng) values("'.$lastInsertId.'","'.$address.'","'.$city.'","'.$state.'","'.$country.'","'.$lat.'","'.$lng.'")';
 				mysql_query($queryLocation);
 			}
 			if(isset($photo['tags']))
 			{
 				foreach($photo['tags']['data'] as $tagData)
 				{
-					$queryTags='insert into tbl_taged(tbl_social_id,tagedName) values("'.$lastInsertId.'","'.$tagData['name'].'")';
+					$queryTags='insert into tbl_tagged(tbl_social_id,tagedName) values("'.$lastInsertId.'","'.$tagData['name'].'")';
 					mysql_query($queryTags);	
 				}
 				
@@ -294,7 +294,7 @@ font-family: Verdana, "Lucida Grande";
             
 			<div class="row" id="">
                <?php
-                    $select_exist_url_group=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" group by sub_type');
+                    $select_exist_url_group=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" group by sub_type');
                     while($fetch_exist_images_group=mysql_fetch_array($select_exist_url_group))
                     {
                     echo '<div class="col-lg-12 col-md-12 col-xs-12 col-xs-12"><h3 class="page-header" style="margin-top: 10px; padding:10px;background: aliceblue; ">'.$fetch_exist_images_group['sub_type'].'</h3></div>';
@@ -303,7 +303,7 @@ font-family: Verdana, "Lucida Grande";
                <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12 ">   
                     <?php
                    
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" and sub_type="'.$fetch_exist_images_group['sub_type'].'"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" and sub_type="'.$fetch_exist_images_group['sub_type'].'"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>

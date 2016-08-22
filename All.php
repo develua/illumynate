@@ -68,7 +68,7 @@ if($fetch_user['facebook']!=1)
             
 			<div class="row">
                <?php
-                    $select_exist_url_group=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" group by sub_type');
+                    $select_exist_url_group=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" group by sub_type');
                     while($fetch_exist_images_group=mysql_fetch_array($select_exist_url_group))
                     {
                     echo '<div class="col-lg-12 col-md-12 col-xs-12 col-xs-12"><h3 class="page-header" style="margin-top: 10px; padding:10px;background: aliceblue; ">'.$fetch_exist_images_group['sub_type'].'</h3></div>';
@@ -77,7 +77,7 @@ if($fetch_user['facebook']!=1)
                <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
                    
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" and sub_type="'.$fetch_exist_images_group['sub_type'].'"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="facebook" and sub_type="'.$fetch_exist_images_group['sub_type'].'"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
@@ -114,7 +114,7 @@ if($fetch_user['facebook']!=1)
 			<div class="row">
                  <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
-                    $select_exist_url=mysql_query('select tbl_socail_url.id,tbl_socail_url.link,tbl_pocket_data.resolved_tag,tbl_pocket_data.resolved_url from tbl_socail_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_socail_url.id where tbl_socail_url.user_id="'.$_SESSION['email'].'"  and tbl_socail_url.social_type="pocket" and tbl_socail_url.sub_type="data"');
+                    $select_exist_url=mysql_query('select tbl_social_url.id,tbl_social_url.link,tbl_pocket_data.resolved_tag,tbl_pocket_data.resolved_url from tbl_social_url left join tbl_pocket_data on tbl_pocket_data.tbl_social_id=tbl_social_url.id where tbl_social_url.user_id="'.$_SESSION['email'].'"  and tbl_social_url.social_type="pocket" and tbl_social_url.sub_type="data"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
@@ -158,7 +158,7 @@ if($fetch_user['facebook']!=1)
             </div>
                  <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="profile_pic"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
@@ -180,7 +180,7 @@ if($fetch_user['facebook']!=1)
                 </div>
                <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">   
                     <?php
-                    $select_exist_url=mysql_query('select * from tbl_socail_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
+                    $select_exist_url=mysql_query('select * from tbl_social_url where user_id="'.$_SESSION['email'].'"  and social_type="instagram" and sub_type="post_images"');
                     while($fetch_exist_images=mysql_fetch_array($select_exist_url))
                     {
                     ?>
