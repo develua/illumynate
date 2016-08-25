@@ -5,8 +5,8 @@ include('header.php');
 include('sidebar.php');
 include_once('src/facebook.php');
 $params = array(
-    'appId' => '1037512873011672',
-    'secret' => '04ab1efbb316dcbd3ff226c287470d01',
+    'appId' => '458086794383584',
+    'secret' => '760a513033ddbf86528b7c190d18da46',
 );
 $facebook = new Facebook($params);
 if($fetch_user['facebook']!=1)
