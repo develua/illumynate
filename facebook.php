@@ -7,8 +7,8 @@
 	require 'Facebook/Facebook.php';
  
 	$facebook = new Facebook(array(
-	  'appId'  => "1107992032576327",
-	  'secret' => "721b42a074773f4ca36b8b78ec33194e",
+	  'appId'  => "458086794383584",
+	  'secret' => "760a513033ddbf86528b7c190d18da46",
 	));
  
 	$user_id = $facebook->getUser();
