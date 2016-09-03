@@ -1,8 +1,8 @@
 <?php
 // Setup class
   $instagram = new Instagram(array(
-    'apiKey'      => 'c64dcf187afd47a5b8095481d36627c7',
-    'apiSecret'   => 'bd64480e4c1548e287925ac232c49e84',
+    'apiKey'      => '2fb3a6498bde405cae2db597fb7d8ac1',
+    'apiSecret'   => '08c44e56e8a74f02a70b31d69bb1faac',
     'apiCallback' => 'http://illumynate.com/ins/instagram/success.php' // must point to success.php
   ));
 
