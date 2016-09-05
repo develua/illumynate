@@ -6,7 +6,26 @@
 					<input type="text" class="ts-sidebar-search" placeholder="Search here...">
 				</li>
 				<li class="ts-label">Main</li>
-				<li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+				<li><a href="dashboard.php"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fa fa-sitemap"></i>MY Content</a>
+					<ul>
+						<li><a href="facebook/success.php">Facebook</a></li>
+						<li><a href="#">Pinterest</a></li>
+                        <li><a href="pocket/index.php">Pocket</a></li>
+						<li><a href="ins/instagram/success.php">Instagram</a>
+						</li>
+					</ul>
+				</li>
+                <li><a href="#"><i class="fa fa-sitemap"></i>Profile Settings</a>
+					<ul>
+						<li><a href="profile.php">My Profile</a></li>
+						<li><a href="changepassword.php">Change Password</a></li>
+						<li><a href="logout.php">Logout</a>
+						</li>
+					</ul>
+				</li>
+                
+                
 		<!--		<li><a href="#"><i class="fa fa-desktop"></i> UI Elements</a>
 					<ul>
 						<li><a href="panels.html">Panels and Wells</a></li>

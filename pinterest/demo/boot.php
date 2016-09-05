@@ -3,12 +3,12 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    require "../autoload.php";
+    composer require "dirkgroenen/Pinterest-API-PHP:0.2.11";
 
-  //  $dotenv = new Dotenv/Dotenv(__DIR__);
-  //  $dotenv->load();
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();
 
-    $pinterest = new DirkGroenen\Pinterest\Pinterest(getenv("4840065063708536804"), getenv("7972d111367ef6b5d969207a500995a64c8523703ccd8761d1f58a5dc54920d1"));
+    $pinterest = new DirkGroenen\Pinterest\Pinterest(getenv("4847323402507141362"), getenv("887cbc52dcace78c709908b679049d348e45b4fc3f77d7db013897d5d1e0cc27"));
 
     if (isset($_GET["code"])) {
         $token = $pinterest->auth->getOAuthToken($_GET["code"]);

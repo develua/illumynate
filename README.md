@@ -1,19 +1,24 @@
-# [illuMYnate - A personal hub to coordinate your digital lifestyle. ](http://illuMYnate.com/) 
+# [Harmony - Free responsive Bootstrap admin template ](http://themestruck.com/) by [ThemeStruck](http://themestruck.com/theme/harmony-admin)
 
-[illuMYnate - A personal hub to coordinate your digital lifestyle. ](http://illumynate.com) is a digital media aggregator that allows you the ability to collect, store, organize, and find the content you care about.. 
+[Harmony - Free responsive Bootstrap admin template ](http://themestruck.com/theme/harmony-admin) is a Responsive Admin Template, Dashboard template, or webapp UI starter theme. [Bootstrap](http://getbootstrap.com/)
 
+[Harmony - Free responsive Bootstrap admin template ](http://themestruck.com/theme/harmony-admin) Beautifully Designed Responsive Bootstrap Template
 
 ## Getting Started
 
-You can simply visit [illuMYnate Home Page](http://illumynate.com) to create an account.  illuMYnate currently aggregates your social media from Instagram and from Pocket, and will soon support Facebook and Pinterest.  It will also allow users to upload their own media.  illuMYnate allows users the ability to customize their content through the addition of tags, thereby allowing you to find the specific content you are looking for easily
+You can simply download or Fork this repository on Github to get started.
 
 ## Bugs and Issues
 
-If you have any bug or Issues with this template, please comment on the [illuMYnate Admin Page](http://illumynate.com/report)
+If you have any bug or Issues with this template, please comment on the [Harmony Admin Page](http://themestruck.com/theme/harmony-admin)
 
-## Feedback
+## Creator
 
-illuMynate was created and is maintained by **Ethan Jayson** [Reach Here](http://ethan.jayson.in).  I would love to get your feedback on illuMYnate.  I am always looking for ways to improve the platform and to find ways to make it easier for our users to locate their content.
+ThemeStruck is sister platform of Thecodeblock and is created and maintained by **Nikhil Arora** [Reach Here](http://nikhilaroar.in), Front end designer at [Thecodeblock](http://thecodeblock.com).
 
-* Ethan's Twitter : [https://twitter.com/ethanjayson](https://twitter.com/ethanjayson)
-* illuMYnate's Twitter : [https://twitter.com/illuMYnate](https://twitter.com/illuMYnate)
+* Nikhil's Twitter : [https://twitter.com/nikhilarora_in](https://twitter.com/nikhilarora_in)
+* ThemeStruck's Twitter : [https://twitter.com/themestruck](https://twitter.com/themestruck)
+
+## License
+
+The code of this template is released under Creative commons Attribution 3.0 License. You can learn more about it on our **[Terms & License](http://themestruck.com/terms-license/)** page.

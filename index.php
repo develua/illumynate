@@ -64,10 +64,10 @@ require_once('connect.php');
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	<meta name="description" content="Social Appp Login">
-	<meta name="author" content="Social Appp Login">
+	<meta name="description" content="illuMYnate">
+	<meta name="author" content="illuMYnate">
 
-	<title>IlluMYnate Login</title>
+	<title>illuMYnate</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -100,7 +100,7 @@ require_once('connect.php');
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold text-light mt-4x">Sign In</h1>
+						<h1 class="text-center text-bold text-light mt-4x">Sign in</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form action="" class="mt" id="login" method="post">
