@@ -22,7 +22,7 @@ if (isset($_GET['authorized'])) {
 		$user['access_token']	the user's access token for calls to Pocket
 		$user['username']	the user's pocket username
 	*/
-//	print_r($user);
+	print_r($user);
 
 	// Set the user's access token to be used for all subsequent calls to the Pocket API
 	$pocket->setAccessToken($user['access_token']);
