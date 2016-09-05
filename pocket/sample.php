@@ -6,7 +6,7 @@ ini_set('display_errors', '1');
 require('scrap.php');
 require('Pocket.php');
 $params = array(
-	'consumerKey' => '56592-890e395939c78ad5b90dc25f' // fill in your Pocket App Consumer Key
+	'consumerKey' => '58150-d33d72137fb908e88d4e14c3' // fill in your Pocket App Consumer Key
 );
 
 
