@@ -31,7 +31,7 @@ $fetch_total_num_all=mysql_fetch_array($fetch_total_all);
 									<div class="col-md-3">
                                     
 										<div class="panel panel-default">
-											<div class="panel-body bk-primary text-light" style="background: url('img/illuMYnate_large.png'); background-size: cover">
+											<div class="panel-body bk-primary text-light" style="background: url('img/Icon_Base_allcolors.png'); background-size: cover">
 												<div class="stat-panel text-center">
 													<div class="stat-panel-number h1 " style="color: black;"><?php echo $fetch_total_num_all['counts'];?></div>
 													<div class="stat-panel-title text-uppercase" style="color: black;">Total Items</div>
