@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Socialite;
+use Vinkla\Instagram\Facades\Instagram;
+use League\OAuth2\Client\Token\AccessToken;
 
 class InstagramController extends Controller
 {
@@ -14,9 +17,18 @@ class InstagramController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function callback()
+    {
+        $user = Socialite::driver('instagram')->user();
+        $token = new AccessToken(["access_token" => $user->token]);
+        Instagram::setAccessToken($token);
+        $data = Instagram::users()->getMedia('self')->getRaw('data');
+        return view('social.instagram', array('data' => $data));
+    }
+
     public function index()
     {
-        //
+        return Socialite::with('instagram')->redirect();
     }
 
     /**

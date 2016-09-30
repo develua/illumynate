@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Socialite;
+use Vinkla\Facebook\Facades\Facebook;
 
 class FacebookController extends Controller
 {
@@ -14,9 +16,16 @@ class FacebookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function callback()
+    {
+        $user = Socialite::driver('facebook')->user();
+        $data = Facebook::get('/me/albums?fields=id,name,privacy,photos.fields(id,name,images)', $user->token)->getDecodedBody();
+        return view('social.facebook', array('data' => $data['data']));
+    }
+
     public function index()
     {
-        //
+        return Socialite::driver('facebook')->scopes(['user_photos'])->redirect();
     }
 
     /**

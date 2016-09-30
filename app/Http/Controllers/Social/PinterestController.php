@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Socialite;
 
 class PinterestController extends Controller
 {
@@ -16,7 +17,13 @@ class PinterestController extends Controller
      */
     public function index()
     {
-        //
+        return Socialite::with('pinterest')->redirect();
+    }
+
+    public function callback()
+    {
+        $user = Socialite::driver('pinterest')->user();
+        dd($user);
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Socialite;
 
 class PocketController extends Controller
 {
@@ -16,7 +17,13 @@ class PocketController extends Controller
      */
     public function index()
     {
-        //
+        //return Socialite::with('pocket')->redirect();
+    }
+
+    public function callback()
+    {
+//        $user = Socialite::driver('pocket')->user();
+//        dd($user);
     }
 
     /**

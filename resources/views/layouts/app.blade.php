@@ -12,10 +12,12 @@
 
     <!-- Styles -->
     {{--<link href="/css/app.css" rel="stylesheet"/>--}}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/css/styles.css" rel="stylesheet"/>
 
     <!-- Scripts -->
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/scripts.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -64,6 +66,9 @@
                                                  document.getElementById('logout-form').submit();">
                                 Logout
                             </a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }} <span class="caret"></span>
                             </a>
@@ -115,19 +120,32 @@
                         <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <a href="#"><i class="glyphicon glyphicon-home"></i>Home</a>
+                                    <a href="/"><i class="glyphicon glyphicon-home"></i>Home</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i>Facebook</a>
+                                    <a href="#" class="menu-two-level"><i class="glyphicon glyphicon-eye-open"></i>Photos</a>
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="/facebook"><i class="glyphicon glyphicon-user"></i>Facebook</a>
+                                        </li>
+                                        <li>
+                                            <a href="/instagram"><i class="glyphicon glyphicon-user"></i>Instagram</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i>Instagram</a>
+                                    <a href="#" class="menu-two-level"><i class="glyphicon glyphicon-align-justify"></i>Articles</a>
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="/pocket"><i class="glyphicon glyphicon-user"></i>Pocket</a>
+                                        </li>
+                                        <li>
+                                            <a href="/pinterest"><i class="glyphicon glyphicon-user"></i>Pinterest</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i>Pocket</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i>Pinterest</a>
+                                    <a href="#"><i class="glyphicon glyphicon-cog"></i>Settings</a>
                                 </li>
                             </ul>
                         </div>
@@ -135,7 +153,13 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-                    @yield('content')
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                @yield('content')
+                            </div>
+                        </div>
+                    </div>
                 </div>
             @else
                 @yield('content')
