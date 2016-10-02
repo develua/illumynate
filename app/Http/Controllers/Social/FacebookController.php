@@ -16,6 +16,12 @@ class FacebookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function index()
+    {
+        return Socialite::driver('facebook')->scopes(['user_photos'])->redirect();
+    }
+
     public function callback()
     {
         $user = Socialite::driver('facebook')->user();
@@ -23,10 +29,7 @@ class FacebookController extends Controller
         return view('social.facebook', array('data' => $data['data']));
     }
 
-    public function index()
-    {
-        return Socialite::driver('facebook')->scopes(['user_photos'])->redirect();
-    }
+
 
     /**
      * Show the form for creating a new resource.

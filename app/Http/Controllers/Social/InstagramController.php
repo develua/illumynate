@@ -17,6 +17,11 @@ class InstagramController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        return Socialite::with('instagram')->redirect();
+    }
+
     public function callback()
     {
         $user = Socialite::driver('instagram')->user();
@@ -26,10 +31,7 @@ class InstagramController extends Controller
         return view('social.instagram', array('data' => $data));
     }
 
-    public function index()
-    {
-        return Socialite::with('instagram')->redirect();
-    }
+
 
     /**
      * Show the form for creating a new resource.

@@ -12,7 +12,8 @@
         "socialiteproviders/instagram": "^2.0",
         "socialiteproviders/pinterest": "^2.0",
         "vinkla/instagram": "^4.2",
-        "vinkla/facebook": "^2.4"
+        "vinkla/facebook": "^2.4",
+        "barryvdh/laravel-debugbar": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -47,7 +48,8 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
+            "php artisan optimize",
+            "php artisan debugbar:publish"
         ]
     },
     "config": {
