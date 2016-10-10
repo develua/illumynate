@@ -9,29 +9,39 @@ use App\Http\Controllers\Controller;
 use Socialite;
 use Vinkla\Instagram\Facades\Instagram;
 use League\OAuth2\Client\Token\AccessToken;
+use App\Models\SocialAccount;
 
 class InstagramController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    const PROVIDER = 'instagram';
+
+    public function index(SocialAccount $social_model)
     {
-        return Socialite::with('instagram')->redirect();
+        // get social account
+        $social_account = $social_model->getSocialAccount(InstagramController::PROVIDER);
+
+        if($social_account)
+            return $this->callback($social_model, $social_account->access_token);
+        else
+            return Socialite::with(InstagramController::PROVIDER)->redirect();
     }
 
-    public function callback()
+    public function callback(SocialAccount $social_model, $access_token = null)
     {
-        $user = Socialite::driver('instagram')->user();
-        $token = new AccessToken(["access_token" => $user->token]);
-        Instagram::setAccessToken($token);
-        $data = Instagram::users()->getMedia('self')->getRaw('data');
-        return view('social.instagram', array('data' => $data));
+        if(!$access_token)
+        {
+            $user_social = Socialite::driver(InstagramController::PROVIDER)->user();
+            $access_token = $user_social->token;
+            $name_arr = explode(' ', $user_social->name, 2);
+            $user_social['first_name'] = trim($name_arr[0]);
+            $user_social['last_name'] = trim($name_arr[1]);
+            $social_model->addSocialAccount($user_social, InstagramController::PROVIDER);
+        }
+
+        Instagram::setAccessToken(new AccessToken(["access_token" => $access_token]));
+        $social_data = Instagram::users()->getMedia('self')->getRaw('data');
+        return view('social.instagram', array('data' => $social_data));
     }
-
-
 
     /**
      * Show the form for creating a new resource.

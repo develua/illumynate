@@ -23,6 +23,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    @yield('head')
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -56,10 +57,6 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        {{--<li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Pocket</a></li>
-                        <li><a href="#">Pinterest</a></li>--}}
                         <li>
                             <a href="{{ url('/logout') }}"
                                onclick="event.preventDefault();
@@ -69,23 +66,6 @@
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->first_name . ' ' . Auth::user()->last_name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>--}}
                         </li>
                     @endif
                 </ul>
@@ -100,7 +80,7 @@
                     <div class="panel panel-default profile-sidebar">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
-                            <img src="../img/avatar.png" class="img-responsive" alt="">
+                            <img src="../img/user.png" class="img-responsive" alt="user"/>
                         </div>
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->

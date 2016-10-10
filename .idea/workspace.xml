@@ -2,13 +2,303 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a03b9a-b4c7-4576-a328-1e4e04b37120" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/integer('user_id')" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/string('provider_user_id')" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/user.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/default-skin/default-skin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/default-skin/preloader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/Provider.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/SocialAccount.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/ProvidersTableSeeder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/photoswipe.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/photoswipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/default-skin/default-skin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/default-skin/default-skin.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/photoswipe-ui-default.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/photoswipe-ui-default.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/photoswipe.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/photoswipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/photoswipe/photoswipe.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/social/pinterest.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/avatar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/changelog.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/config/debugbar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Console/ClearCommand.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Console/PublishCommand.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/AssetController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/BaseController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Controllers/OpenHandlerController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/AuthCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/EventCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/FilesCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/GateCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/IlluminateRouteCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/LaravelCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/LogsCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/MultiAuthCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/QueryCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/SessionCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/SymfonyRequestCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/DataCollector/ViewCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Facade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/JavascriptRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/LaravelDebugbar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/LumenServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Middleware/Debugbar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/laravel-debugbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/vendor/font-awesome/generator_config.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Resources/vendor/font-awesome/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/ServiceProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Support/Clockwork/ClockworkCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Support/Clockwork/Converter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/SymfonyHttpDriver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Extension/Debug.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Extension/Dump.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Extension/Stopwatch.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/Node/StopwatchNode.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/Twig/TokenParser/StopwatchTokenParser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/helpers.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar/src/migrations/2014_12_01_120000_create_phpdebugbar_storage_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/MonologCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Propel2Collector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/PropelCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/SlimCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/SwiftMailer/SwiftLogCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/SwiftMailer/SwiftMailCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TraceableTwigEnvironment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TraceableTwigTemplate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TwigCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/AggregatedCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/AssetProvider.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/ConfigCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/DataCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/DataCollectorInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/ExceptionsCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/LocalizationCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MemoryCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MessagesAggregateInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MessagesCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/PDOCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TraceablePDO.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TraceablePDOStatement.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TracedStatement.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PhpInfoCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/Renderable.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/RequestDataCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataCollector/TimeDataCollector.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatterInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DebugBar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DebugBarException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/HttpDriverInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/OpenHandler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/PhpHttpDriver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/RequestIdGenerator.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/RequestIdGeneratorInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/debugbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/debugbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/openhandler.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/openhandler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/highlightjs/highlight.pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/highlightjs/styles/github.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/jquery/dist/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/mails/widget.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/mails/widget.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/sqlqueries/widget.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/sqlqueries/widget.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/templates/widget.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets/templates/widget.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/StandardDebugBar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/FileStorage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/MemcachedStorage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/PdoStorage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/RedisStorage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/StorageInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/Storage/pdo_storage_schema.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/phpunit.xml.dist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_astext1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_astext2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/command_astext.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/command_asxml.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/definition_astext.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/definition_asxml.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Social/FacebookController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Social/FacebookController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Social/InstagramController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Social/InstagramController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Social/PinterestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Social/PinterestController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Social/PocketController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Social/PocketController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/styles.css" afterPath="$PROJECT_DIR$/public/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/social/facebook.blade.php" afterPath="$PROJECT_DIR$/resources/views/social/facebook.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/social/instagram.blade.php" afterPath="$PROJECT_DIR$/resources/views/social/instagram.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/phpunit.bat" afterPath="$PROJECT_DIR$/vendor/bin/phpunit.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/.travis.yml" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/UPGRADING.md" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/UPGRADING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/AuthenticationException.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/AuthenticationException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Console/stubs/make/views/layouts/app.stub" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Console/stubs/make/views/layouts/app.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Passwords/PasswordBroker.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Auth/Passwords/PasswordBroker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/MemcachedStore.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/MemcachedStore.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Container.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Container.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factory.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/FactoryBuilder.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/FactoryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Application.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Inspiring.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Inspiring.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithPages.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithPages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/ChannelManager.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/ChannelManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/Console/stubs/notifications.stub" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Notifications/Console/stubs/notifications.stub" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/bootstrap-4.blade.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/bootstrap-4.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/default.blade.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/default.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/simple-bootstrap-4.blade.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/simple-bootstrap-4.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/simple-default.blade.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/resources/views/simple-default.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/QueueServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Worker.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Worker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Route.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Pluralizer.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Pluralizer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/DatabasePresenceVerifier.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Validator.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Validator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/league/flysystem/build/osx_install_composer.sh" afterPath="$PROJECT_DIR$/vendor/league/flysystem/build/osx_install_composer.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/league/flysystem/src/Config.php" afterPath="$PROJECT_DIR$/vendor/league/flysystem/src/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/.gitignore" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/README.md" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Generator.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Generator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Invocation/Static.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Framework/MockObject/Invocation/Static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/GeneratorTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/GeneratorTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/return_type_declarations_object_method.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/return_type_declarations_object_method.phpt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/return_type_declarations_self.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/return_type_declarations_self.phpt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/return_type_declarations_static_method.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/return_type_declarations_static_method.phpt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/scalar_type_declarations.phpt" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Generator/scalar_type_declarations.phpt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Invocation/ObjectTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Invocation/ObjectTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Invocation/StaticTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Invocation/StaticTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Matcher/ConsecutiveParametersTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObject/Matcher/ConsecutiveParametersTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObjectTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/tests/MockObjectTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/.gitattributes" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/.gitattributes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-5.5.md" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-5.5.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/README.md" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/composer.json" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit.xsd" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/ForwardCompatibility/TestCase.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/ForwardCompatibility/TestCase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestResult.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestResult.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/TestRunner.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/TextUI/TestRunner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Printer.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/Printer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/TestDox/ResultPrinter/HTML.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Util/TestDox/ResultPrinter/HTML.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/AssertTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/AssertTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/ConstraintTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/ConstraintTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/TestCaseTest.php" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/Framework/TestCaseTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/composer.json" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidFactory.php" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Application.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Application.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Command/Command.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Command/Command.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Descriptor/MarkdownDescriptor.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Descriptor/MarkdownDescriptor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Helper/QuestionHelper.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Helper/QuestionHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Input/ArgvInput.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Input/ArgvInput.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/ApplicationTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/ApplicationTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Command/CommandTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Command/CommandTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_1.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_2.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/application_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/command_1.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/command_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/command_2.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/command_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_1.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_2.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_3.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_4.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_argument_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_1.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_2.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_3.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_4.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_definition_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_1.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_2.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_3.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_4.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_5.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_5.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_6.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Fixtures/input_option_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/HelperSetTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/HelperSetTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/TableTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Helper/TableTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Tests/Input/ArgvInputTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/console/Tests/Input/ArgvInputTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/XPath/Translator.php" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/XPath/Translator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug/ErrorHandler.php" afterPath="$PROJECT_DIR$/vendor/symfony/debug/ErrorHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/ExcludeDirectoryFilterIterator.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/ExcludeDirectoryFilterIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/RecursiveDirectoryIterator.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Iterator/RecursiveDirectoryIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/ExcludeDirectoryFilterIteratorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/Iterator/ExcludeDirectoryFilterIteratorTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/JsonResponse.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/JsonResponse.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Session/Flash/FlashBagInterface.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Session/Flash/FlashBagInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Session/Storage/Handler/MongoDbSessionHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/Session/Storage/Handler/MemcachedSessionHandlerTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Tests/Session/Storage/Handler/MemcachedSessionHandlerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ArgumentResolver.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ArgumentResolver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ArgumentResolver/DefaultValueResolver.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ArgumentResolver/DefaultValueResolver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ControllerResolver.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Controller/ControllerResolver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadata.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadata.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadataFactory.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadataFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/DataCollector/LoggerDataCollector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/DependencyInjection/LazyLoadingFragmentHandler.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/DependencyInjection/LazyLoadingFragmentHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Profiler/Profiler.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Profiler/Profiler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/Controller/ArgumentResolverTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/Controller/ArgumentResolverTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/Controller/ControllerResolverTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/Controller/ControllerResolverTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/ControllerMetadata/ArgumentMetadataFactoryTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/ControllerMetadata/ArgumentMetadataFactoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/ControllerMetadata/ArgumentMetadataTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/ControllerMetadata/ArgumentMetadataTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/DataCollector/DumpDataCollectorTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/DataCollector/DumpDataCollectorTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/EventListener/ValidateRequestListenerTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/EventListener/ValidateRequestListenerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/HttpKernelTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Tests/HttpKernelTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/UriSigner.php" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/UriSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/process/ExecutableFinder.php" afterPath="$PROJECT_DIR$/vendor/symfony/process/ExecutableFinder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/process/Tests/ProcessTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/process/Tests/ProcessTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/MoFileDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Dumper/MoFileDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Loader/MoFileLoader.php" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Loader/MoFileLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ReflectionCaster.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Caster/ReflectionCaster.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/VarCloner.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Cloner/VarCloner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/AbstractDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/AbstractDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/HtmlDumper.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Dumper/HtmlDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/var-dumper/Tests/Fixtures/Twig.php" afterPath="$PROJECT_DIR$/vendor/symfony/var-dumper/Tests/Fixtures/Twig.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/InlineTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Tests/InlineTest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_09_22_184120_create_social_accounts_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_10_05_092707_create_social_accounts_table.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_09_30_122559_create_providers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_10_05_092633_create_providers_table.php" />
     </list>
     <ignored path="illumynate.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,52 +319,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FacebookController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/FacebookController.php">
+      <file leaf-file-name="PocketController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/PocketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstagramController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/InstagramController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="31" column="73" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/app.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="181" column="44" selection-start-line="181" selection-start-column="44" selection-end-line="181" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="170">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding>
+                <element signature="e#47#75#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,6 +338,7 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -95,14 +348,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/app/Modes/User.php" />
-        <option value="$PROJECT_DIR$/config/auth.php" />
-        <option value="$PROJECT_DIR$/public/css/left-navbar.css" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" />
         <option value="$PROJECT_DIR$/app/SocialAccount.php" />
@@ -111,29 +356,49 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
         <option value="$PROJECT_DIR$/config/services.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/PinterestController.php" />
         <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/PocketController.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/config/facebook.php" />
-        <option value="$PROJECT_DIR$/vendor/laravel/socialite/src/Two/FacebookProvider.php" />
         <option value="$PROJECT_DIR$/config/instagram.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/social/instagram.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/social/facebook.blade.php" />
         <option value="$PROJECT_DIR$/public/js/scripts.js" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/styles.css" />
         <option value="$PROJECT_DIR$/database/migrations/2016_09_30_121632_create_provider_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_09_22_184120_create_social_accounts_table.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/FacebookController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/InstagramController.php" />
         <option value="$PROJECT_DIR$/config/session.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/socialite/src/Two/FacebookProvider.php" />
+        <option value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php" />
+        <option value="$PROJECT_DIR$/vendor/facebook/graph-sdk/src/Facebook/HttpClients/FacebookCurl.php" />
+        <option value="$PROJECT_DIR$/vendor/facebook/graph-sdk/src/Facebook/HttpClients/FacebookCurlHttpClient.php" />
+        <option value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/socialite/src/Two/AbstractProvider.php" />
+        <option value="$PROJECT_DIR$/config/facebook.php" />
+        <option value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_09_30_122559_create_providers_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_09_22_184120_create_social_accounts_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_10_05_092633_create_providers_table.php" />
+        <option value="$PROJECT_DIR$/app/SocialAccounts.php" />
+        <option value="$PROJECT_DIR$/app/Models/SocialAccounts.php" />
+        <option value="$PROJECT_DIR$/app/Models/Providers.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ProvidersTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Models/Provider.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/InstagramController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/FacebookController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_10_05_092707_create_social_accounts_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/SocialAccount.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/photoswipe.js" />
+        <option value="$PROJECT_DIR$/resources/views/social/pinterest.blade.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/PinterestController.php" />
+        <option value="$PROJECT_DIR$/public/css/styles.css" />
+        <option value="$PROJECT_DIR$/resources/views/social/pinterest.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/social/instagram.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/social/facebook.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Social/PocketController.php" />
       </list>
     </option>
   </component>
@@ -178,7 +443,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,13 +472,133 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="social" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="illumynate.esy.es" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Social" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,16 +608,21 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OpenServer\domains\illumynate.com\app\Modes" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\illumynate.esy.es\resources\views\social" />
+      <recent name="D:\OpenServer\domains\illumynate.esy.es\public\img" />
       <recent name="D:\OpenServer\domains\illumynate.com\public\js" />
       <recent name="D:\OpenServer\domains\illumynate.com\public" />
       <recent name="D:\OpenServer\domains\illumynate.com\public\css" />
-      <recent name="D:\OpenServer\domains\illumynate.com\public\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\illumynate.esy.es\public\plugins" />
+      <recent name="D:\OpenServer\domains\illumynate.esy.es\public\js\photoswipe" />
+      <recent name="D:\OpenServer\domains\illumynate.esy.es\app\Models" />
+      <recent name="D:\OpenServer\domains\illumynate.com\app\Modes" />
     </key>
   </component>
   <component name="RunManager">
@@ -318,23 +708,37 @@
       <workItem from="1475239415468" duration="1437000" />
       <workItem from="1475250709350" duration="2229000" />
       <workItem from="1475392154016" duration="1424000" />
+      <workItem from="1475435053850" duration="2532000" />
+      <workItem from="1475480794637" duration="4986000" />
+      <workItem from="1475652667907" duration="6477000" />
+      <workItem from="1475659249134" duration="1183000" />
+      <workItem from="1475660488431" duration="574000" />
+      <workItem from="1475661282409" duration="4339000" />
+      <workItem from="1475744206903" duration="8364000" />
+      <workItem from="1475838024059" duration="8000000" />
+      <workItem from="1475866526674" duration="122000" />
+      <workItem from="1475866737514" duration="412000" />
+      <workItem from="1476005968652" duration="4362000" />
+      <workItem from="1476022389861" duration="1646000" />
+      <workItem from="1476088298933" duration="1681000" />
+      <workItem from="1476090050189" duration="4435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85620000" />
+    <option name="totallyTimeSpent" value="134733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.259375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2328125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19887641" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2247191" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -371,291 +775,27 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/socialite/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-255">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vinkla/instagram/config/instagram.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/socialite/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-106">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vinkla/instagram/src/Session/SessionStore.php">
+    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-201">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vinkla/instagram/src/InstagramFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="57" column="65" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vinkla/instagram/src/InstagramServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="118" column="19" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/socialiteproviders/instagram/src/InstagramExtendSocialite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/socialiteproviders/instagram/src/Provider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-830">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vinkla/instagram/src/InstagramManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="38" column="42" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-728">
-          <caret line="153" column="30" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/oauth2-client/src/Token/AccessToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vinkla/instagram/src/Facades/Instagram.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/larabros/elogram/src/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/larabros/elogram/src/Http/Response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="83" column="26" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/social/facebook.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery-3.1.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="112" column="48" selection-start-line="112" selection-start-column="48" selection-end-line="112" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/social/instagram.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/facebook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/instagram.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/.gitkeep">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/.gitkeep">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_30_121632_create_provider_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_30_122559_create_providers_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_22_184120_create_social_accounts_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8416">
-          <caret line="9" column="97" selection-start-line="9" selection-start-column="97" selection-end-line="9" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_files.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-579">
-          <caret line="4" column="60" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6362">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="460">
+          <caret line="172" column="35" selection-start-line="172" selection-start-column="35" selection-end-line="172" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -666,59 +806,340 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/.gitkeep">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="937" column="24" selection-start-line="937" selection-start-column="24" selection-end-line="937" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/cache/config.php_" />
-    <entry file="file://$PROJECT_DIR$/config/session.php">
+    <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="150" column="42" selection-start-line="150" selection-start-column="38" selection-end-line="150" selection-end-column="42" />
+        <state relative-caret-position="-1532">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_30_122559_create_providers_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_22_184120_create_social_accounts_table.php" />
+    <entry file="file://$PROJECT_DIR$/app/User.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Seeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_05_092633_create_providers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Provider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/FacebookController.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/InstagramController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/socialite/src/Two/FacebookProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/ProvidersTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_10_05_092707_create_social_accounts_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="31" column="73" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/photoswipe/photoswipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11016">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/photoswipe/photoswipe-ui-default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6273">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1683">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/user.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="135" column="37" selection-start-line="135" selection-start-column="37" selection-end-line="135" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/photoswipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
+    <entry file="file://$PROJECT_DIR$/config/instagram.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="181" column="44" selection-start-line="181" selection-start-column="44" selection-end-line="181" selection-end-column="44" />
+        <state relative-caret-position="391">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/SocialAccount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/Pin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Pinterest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1170">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Utils/CurlBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Auth/PinterestOAuth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/social/pinterest.blade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/demo/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/demo/boot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/demo/callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dirkgroenen/pinterest-api-php/src/Pinterest/Endpoints/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/social/pinterest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/social/facebook.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="102" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/PinterestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="e#47#75#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        <state relative-caret-position="289">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/social/instagram.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="95" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/InstagramController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="60" column="7" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/FacebookController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="37" selection-end-column="9" />
+          <folding>
+            <element signature="e#47#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/PocketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#47#75#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

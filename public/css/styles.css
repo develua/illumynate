@@ -26,8 +26,8 @@ body {
 .profile-userpic img {
     float: none;
     margin: 0 auto;
-    width: 50%;
-    height: 50%;
+    width: 128px;
+    height: 128px;
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
@@ -71,7 +71,7 @@ body {
 }
 
 .profile-usermenu {
-    margin-top: 30px;
+    margin-top: 22px;
 }
 
 .profile-usermenu ul li {
@@ -123,6 +123,35 @@ body {
 
 .profile-usermenu ul li ul
 {
-    margin-left: 30px;
+    margin-left: 22px;
     display: none;
+}
+
+.pinterest-item
+{
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.pinterest-item img
+{
+    width: 236px;
+    display: block;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.pinterest-item span
+{
+    display: block;
+    width: 236px;
+    font-size: 11px;
+    text-align: center;
+    padding: 3px;
+}
+
+.pinterest-item a:hover
+{
+    text-decoration: none;
 }

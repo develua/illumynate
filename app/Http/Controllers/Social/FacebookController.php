@@ -8,28 +8,38 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Socialite;
 use Vinkla\Facebook\Facades\Facebook;
+use App\Models\SocialAccount;
 
 class FacebookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    const PROVIDER = 'facebook';
 
-    public function index()
+    public function index(SocialAccount $social_model)
     {
-        return Socialite::driver('facebook')->scopes(['user_photos'])->redirect();
+        // get social account
+        $social_account = $social_model->getSocialAccount(FacebookController::PROVIDER);
+
+        if($social_account)
+            return $this->callback($social_model, $social_account->access_token);
+        else
+            return Socialite::with(FacebookController::PROVIDER)->scopes(['public_profile ', 'email', 'user_photos'])->redirect();
     }
 
-    public function callback()
+    public function callback(SocialAccount $social_model, $access_token = null)
     {
-        $user = Socialite::driver('facebook')->user();
-        $data = Facebook::get('/me/albums?fields=id,name,privacy,photos.fields(id,name,images)', $user->token)->getDecodedBody();
-        return view('social.facebook', array('data' => $data['data']));
+        if(!$access_token)
+        {
+            $user_social = Socialite::driver(FacebookController::PROVIDER)->user();
+            $access_token = $user_social->token;
+            $name_arr = explode(' ', $user_social->name, 2);
+            $user_social['first_name'] = trim($name_arr[0]);
+            $user_social['last_name'] = trim($name_arr[1]);
+            $social_model->addSocialAccount($user_social, FacebookController::PROVIDER);
+        }
+
+        $social_data = Facebook::get('/me/albums?fields=id,name,privacy,photos.fields(id,name,images)', $access_token)->getDecodedBody();
+        return view('social.facebook', array('data' => $social_data['data']));
     }
-
-
 
     /**
      * Show the form for creating a new resource.

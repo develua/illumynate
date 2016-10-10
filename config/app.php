@@ -177,9 +177,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-
-        'Barryvdh\Debugbar\ServiceProvider',
+        
         \SocialiteProviders\Manager\ServiceProvider::class,
         Vinkla\Instagram\InstagramServiceProvider::class,
         Vinkla\Facebook\FacebookServiceProvider::class,

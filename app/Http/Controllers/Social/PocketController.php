@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Socialite;
+use Duellsy\Pockpack\Pockpack;
+use Duellsy\Pockpack\PockpackAuth;
+use Duellsy\Pockpack\PockpackQueue;
 
 class PocketController extends Controller
 {

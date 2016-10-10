@@ -7,23 +7,40 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Socialite;
+use DirkGroenen\Pinterest\Pinterest;
+use App\Models\SocialAccount;
 
 class PinterestController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    const PROVIDER = 'pinterest';
+
+    public function index(SocialAccount $social_model)
     {
-        return Socialite::with('pinterest')->redirect();
+        // get social account
+        $social_account = $social_model->getSocialAccount(PinterestController::PROVIDER);
+
+        if($social_account)
+            return $this->callback($social_model, $social_account->access_token);
+        else
+            return Socialite::with(PinterestController::PROVIDER)->redirect();
     }
 
-    public function callback()
+    public function callback(SocialAccount $social_model, $access_token = null)
     {
-        $user = Socialite::driver('pinterest')->user();
-        dd($user);
+        if(!$access_token)
+        {
+            $user_social = Socialite::driver(PinterestController::PROVIDER)->user();
+            $access_token = $user_social->token;
+            $name_arr = explode(' ', $user_social->name, 2);
+            $user_social['first_name'] = trim($name_arr[0]);
+            $user_social['last_name'] = trim($name_arr[1]);
+            $social_model->addSocialAccount($user_social, PinterestController::PROVIDER);
+        }
+
+        $pinterest = new Pinterest(env('PINTEREST_KEY'), env('PINTEREST_SECRET'));
+        $pinterest->auth->setOAuthToken($access_token);
+        $pins = $pinterest->users->getMePins(array('fields' => 'note,url,image'));
+        return view('social.pinterest', array('data' => $pins));
     }
 
     /**

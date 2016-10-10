@@ -13,7 +13,8 @@
         "socialiteproviders/pinterest": "^2.0",
         "vinkla/instagram": "^4.2",
         "vinkla/facebook": "^2.4",
-        "barryvdh/laravel-debugbar": "dev-master"
+        "dirkgroenen/Pinterest-API-PHP": "^0.2.11",
+        "duellsy/pockpack": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -48,8 +49,7 @@
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize",
-            "php artisan debugbar:publish"
+            "php artisan optimize"
         ]
     },
     "config": {
