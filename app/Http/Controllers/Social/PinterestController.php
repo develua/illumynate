@@ -17,24 +17,24 @@ class PinterestController extends Controller
     public function index(SocialAccount $social_model)
     {
         // get social account
-        $social_account = $social_model->getSocialAccount(PinterestController::PROVIDER);
+        $social_account = $social_model->getSocialAccount(self::PROVIDER);
 
         if($social_account)
             return $this->callback($social_model, $social_account->access_token);
-        else
-            return Socialite::with(PinterestController::PROVIDER)->redirect();
+
+        return Socialite::with(self::PROVIDER)->redirect();
     }
 
     public function callback(SocialAccount $social_model, $access_token = null)
     {
         if(!$access_token)
         {
-            $user_social = Socialite::driver(PinterestController::PROVIDER)->user();
+            $user_social = Socialite::driver(self::PROVIDER)->user();
             $access_token = $user_social->token;
             $name_arr = explode(' ', $user_social->name, 2);
             $user_social['first_name'] = trim($name_arr[0]);
             $user_social['last_name'] = trim($name_arr[1]);
-            $social_model->addSocialAccount($user_social, PinterestController::PROVIDER);
+            $social_model->addSocialAccount($user_social, self::PROVIDER);
         }
 
         $pinterest = new Pinterest(env('PINTEREST_KEY'), env('PINTEREST_SECRET'));

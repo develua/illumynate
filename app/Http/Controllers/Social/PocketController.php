@@ -6,26 +6,50 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 use Duellsy\Pockpack\Pockpack;
 use Duellsy\Pockpack\PockpackAuth;
 use Duellsy\Pockpack\PockpackQueue;
+use App\Models\SocialAccount;
+use Laravel\Socialite\Two\User;
 
 class PocketController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    const PROVIDER = 'pocket';
+
+    public function index(SocialAccount $social_model)
     {
-        //return Socialite::with('pocket')->redirect();
+        // get social account
+        $social_account = $social_model->getSocialAccount(self::PROVIDER);
+
+        if($social_account)
+            return $this->callback($social_model, $social_account->access_token);
+
+        $pockpack = new PockpackAuth();
+        $request_token = $pockpack->connect(env('POCKET_CONSUMER_KEY'));
+        $callback_url = env("POCKET_REDIRECT_URI").'?request_token='.$request_token;
+        $redirect_url = 'https://getpocket.com/auth/authorize?request_token='.$request_token.'&redirect_uri='.$callback_url;
+        return redirect($redirect_url);
     }
 
-    public function callback()
+    public function callback(SocialAccount $social_model, $access_token = null)
     {
-//        $user = Socialite::driver('pocket')->user();
-//        dd($user);
+        if(!$access_token)
+        {
+            $request_token = Input::get('request_token');
+            $pockpack = new PockpackAuth();
+            $response_data = $pockpack->receiveTokenAndUsername(env('POCKET_CONSUMER_KEY'), $request_token);
+            $user_social = new User();
+            $user_social->token = $access_token = $response_data['access_token'];
+            $name_arr = explode(' ', $response_data['username'], 2);
+            $user_social['first_name'] = trim($name_arr[0]);
+            $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
+            $social_model->addSocialAccount($user_social, self::PROVIDER);
+        }
+
+        $pockpack = new Pockpack(env('POCKET_CONSUMER_KEY'), $access_token);
+        $data = $pockpack->retrieve();
+        return view('social.pocket', array('data' => $data->list));
     }
 
     /**

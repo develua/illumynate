@@ -17,24 +17,24 @@ class FacebookController extends Controller
     public function index(SocialAccount $social_model)
     {
         // get social account
-        $social_account = $social_model->getSocialAccount(FacebookController::PROVIDER);
+        $social_account = $social_model->getSocialAccount(self::PROVIDER);
 
         if($social_account)
             return $this->callback($social_model, $social_account->access_token);
-        else
-            return Socialite::with(FacebookController::PROVIDER)->scopes(['public_profile ', 'email', 'user_photos'])->redirect();
+
+        return Socialite::with(self::PROVIDER)->scopes(['public_profile ', 'email', 'user_photos'])->redirect();
     }
 
     public function callback(SocialAccount $social_model, $access_token = null)
     {
         if(!$access_token)
         {
-            $user_social = Socialite::driver(FacebookController::PROVIDER)->user();
+            $user_social = Socialite::driver(self::PROVIDER)->user();
             $access_token = $user_social->token;
             $name_arr = explode(' ', $user_social->name, 2);
             $user_social['first_name'] = trim($name_arr[0]);
             $user_social['last_name'] = trim($name_arr[1]);
-            $social_model->addSocialAccount($user_social, FacebookController::PROVIDER);
+            $social_model->addSocialAccount($user_social, self::PROVIDER);
         }
 
         $social_data = Facebook::get('/me/albums?fields=id,name,privacy,photos.fields(id,name,images)', $access_token)->getDecodedBody();

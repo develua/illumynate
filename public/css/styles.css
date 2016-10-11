@@ -126,7 +126,7 @@ body {
     margin-left: 22px;
     display: none;
 }
-
+/* pinterest */
 .pinterest-item
 {
     float: left;
@@ -151,7 +151,37 @@ body {
     padding: 3px;
 }
 
-.pinterest-item a:hover
+.pinterest-item a
 {
     text-decoration: none;
+}
+
+/* pocket */
+.pocket-item
+{
+    width: 240px;
+    float: left;
+    margin: 0 15px 15px 0;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    background: #F6F9FB;
+    padding: 10px;
+}
+
+.pocket-item:hover
+{
+    background: #ebebeb;
+}
+
+.pocket-item a
+{
+    text-decoration: none;
+}
+
+.pocket-item p
+{
+    margin-top: 5px;
+    color: #444;
+    font-size: 12px;
 }
