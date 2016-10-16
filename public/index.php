@@ -1,5 +1,5 @@
 <div class="checkbox">
 										
-											Keep me signed in bromosapian
+											It works!
 										
 									</div>
