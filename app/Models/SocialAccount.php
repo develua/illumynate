@@ -24,19 +24,21 @@ class SocialAccount extends Model
     }
 
     // add Social Account
-    public function addSocialAccount($user, $provider)
+    public function addOrUpdateSocialAccount($user, $provider)
     {
         $user_id = Auth::user()->id;
         $provider_id = Provider::getProviderID($provider);
 
-        SocialAccount::create([
+        $social_account = SocialAccount::firstOrNew(array(
             'user_id' => $user_id,
-            'provider_id' => $provider_id,
-            'first_name' => $user['first_name'],
-            'last_name' => $user['last_name'],
-            'email' => $user->email,
-            'profile_photo' => $user->avatar,
-            'access_token' => $user->token
-        ]);
+            'provider_id' => $provider_id
+        ));
+
+        $social_account['first_name'] = $user['first_name'];
+        $social_account['last_name'] = $user['last_name'];
+        $social_account['email'] = $user->email;
+        $social_account['profile_photo'] = $user->avatar;
+        $social_account['access_token'] = $user->token;
+        $social_account->save();
     }
 }

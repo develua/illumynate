@@ -232,6 +232,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Instagram' => Vinkla\Instagram\Facades\Instagram::class,
         'Facebook' => Vinkla\Facebook\Facades\Facebook::class,
+        'TagsHelper' => App\Helpers\TagsHelper::class
     ],
 
 ];

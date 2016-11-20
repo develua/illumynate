@@ -13,17 +13,15 @@
     <!-- Styles -->
     {{--<link href="/css/app.css" rel="stylesheet"/>--}}
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+    @yield('style')
     <link href="/css/styles.css" rel="stylesheet"/>
 
     <!-- Scripts -->
-    <script src="/js/jquery-3.1.1.min.js"></script>
-    <script src="/js/scripts.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
-    @yield('head')
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -58,9 +56,18 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li>
-                            <a href="{{ url('/logout') }}"
-                               onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/search') }}">
+                                {{ csrf_field() }}
+                                <div class="search-input input-group">
+                                    <input type="text" name="text_search" class="form-control input-sm" value="{{@$text_search}}" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-secondary btn-sm" id="btn-search" type="submit">GO</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Logout
                             </a>
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -147,7 +154,13 @@
         </div>
     </div>
 
+    @yield('footer')
+
     <!-- Scripts -->
+    <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/js/app.js"></script>
+    @yield('script')
+    <script src="/js/scripts.js"></script>
+
 </body>
 </html>

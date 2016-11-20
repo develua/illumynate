@@ -127,10 +127,13 @@ body {
     display: none;
 }
 /* pinterest */
+
 .pinterest-item
 {
     float: left;
     margin: 0 10px 10px 0;
+    background: #ebebeb;
+    border-radius: 7px;
 }
 
 .pinterest-item img
@@ -142,7 +145,7 @@ body {
     border-radius: 7px;
 }
 
-.pinterest-item span
+.pinterest-item > span
 {
     display: block;
     width: 236px;
@@ -156,7 +159,16 @@ body {
     text-decoration: none;
 }
 
+.pinterest-item .bootstrap-tagsinput
+{
+    width: 236px;
+    color: #434343;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+}
+
 /* pocket */
+
 .pocket-item
 {
     width: 240px;
@@ -167,6 +179,7 @@ body {
     border-radius: 7px;
     background: #F6F9FB;
     padding: 10px;
+    text-align: left;
 }
 
 .pocket-item:hover
@@ -184,4 +197,88 @@ body {
     margin-top: 5px;
     color: #444;
     font-size: 12px;
+}
+
+.pocket-item .bootstrap-tagsinput
+{
+    width: 100%;
+    text-align: left;
+    color: #434343;
+    border-bottom: 1px solid #ccc;
+}
+
+/* photo gallery */
+
+.photo-caption
+{
+    display: none;
+}
+
+.photo-gallery > a > img
+{
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.photo-gallery, .articles-block
+{
+    text-align: center;
+}
+
+.bootstrap-tagsinput
+{
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.photo-gallery a:hover
+{
+    text-decoration: none;
+}
+
+.photo-data
+{
+    position: absolute;
+    width: 100%;
+    min-height: 123px;
+    color: #CCC;
+    margin-top: 10px;
+    bottom: 0;
+    padding: 15px;
+    background: url('../img/transp_black_75.png');
+}
+
+.photo-data p
+{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.photo-data a
+{
+    color: #CCC;
+    text-decoration: underline;
+}
+
+.photo-data a:hover
+{
+    color: #EEE;
+}
+
+.search-input
+{
+    width: 230px;
+    margin: 10px 15px;
+}
+
+.loader
+{
+    margin: 26px 0;
+}
+
+.pinterest-item input[data-role=tagsinput],
+.pocket-item input[data-role=tagsinput]
+{
+    display: none;
 }
