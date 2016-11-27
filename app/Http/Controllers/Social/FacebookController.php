@@ -18,66 +18,59 @@ class FacebookController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
-
         $this->social_model = new SocialAccount();
         $this->content_tag_model = new ContentTag();
     }
 
-    public function index($innvalid = false)
+    public function index($search = null)
     {
-        // get social account
         $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
 
-        if($social_account && !$innvalid)
-            return $this->callback($social_account->access_token);
+        if($social_account)
+        {
+            $social_data = Facebook::get('me/photos?fields=id,name,images,created_time,event,name_tags,place,tags&type=uploaded', $social_account->access_token)->getDecodedBody();
+            $social_data_uploaded = Facebook::get('me/photos?fields=id,name,images,created_time,event,name_tags,place,tags', $social_account->access_token)->getDecodedBody();
+            $social_data['data'] = array_merge($social_data['data'], $social_data_uploaded['data']);
 
+            $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
+
+            if($search)
+                $social_data['data'] = FacebookModel::searchPhotos($social_data['data'], $tags, $search);
+
+            return view('parts.social.facebook-photos')
+                ->withData($social_data['data'])
+                ->withTags($tags);
+        }
+
+        return view('parts.button-auth')->withProvider(self::PROVIDER);
+    }
+
+    public function auth()
+    {
         return Socialite::with(self::PROVIDER)->scopes(['public_profile ', 'email', 'user_photos'])->redirect();
     }
 
-    public function callback($access_token = null)
+    public function logout()
+    {
+        $this->social_model->getSocialAccount(self::PROVIDER)->delete();
+        return redirect('photos');
+    }
+
+    public function callback()
     {
         try
         {
-            if(!$access_token)
-            {
-                $user_social = Socialite::driver(self::PROVIDER)->user();
-                $access_token = $user_social->token;
-                $name_arr = explode(' ', $user_social->name, 2);
-                $user_social['first_name'] = trim($name_arr[0]);
-                $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
-                $this->social_model->addOrUpdateSocialAccount($user_social, self::PROVIDER);
-            }
-
-            $social_data = Facebook::get('/me/albums?fields=id,name,privacy,photos.fields(id,name,images,created_time,event,name_tags,place,tags,reactions)', $access_token)->getDecodedBody();
-            $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
-
-            return view('social.facebook', array('data' => $social_data['data'], 'tags' => $tags));
+            $user_social = Socialite::driver(self::PROVIDER)->user();
+            $name_arr = explode(' ', $user_social->name, 2);
+            $user_social['first_name'] = trim($name_arr[0]);
+            $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
+            $this->social_model->addOrUpdateSocialAccount($user_social, self::PROVIDER);
         }
         catch(\Exception $e)
         {
-            return $this->index(true);
         }
+
+        return redirect('photos');
     }
 
-    public function search(Request $request)
-    {
-        try
-        {
-            // get social account
-            $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
-
-            if($social_account)
-            {
-                $social_data = Facebook::get('/me/albums?fields=id,name,privacy,photos.fields(id,name,images,created_time,event,name_tags,place,tags,reactions)', $social_account->access_token)->getDecodedBody();
-                $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
-
-                $result_search = FacebookModel::searchPhotos($social_data['data'], $tags, $request->input('text_search'));
-                return view('parts.facebook-photos', array('data' => $result_search, 'tags' => $tags));
-            }
-        }
-        catch (\Exception $ex)
-        {
-        }
-    }
 }

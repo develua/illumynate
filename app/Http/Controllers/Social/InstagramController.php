@@ -20,67 +20,57 @@ class InstagramController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
-
         $this->social_model = new SocialAccount();
         $this->content_tag_model = new ContentTag();
     }
 
-    public function index($innvalid = false)
+    public function index($search = null)
     {
-        // get social account
         $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
 
-        if($social_account && !$innvalid)
-            return $this->callback($social_account->access_token);
-
-        return Socialite::with(self::PROVIDER)->redirect();
-    }
-
-    public function callback($access_token = null)
-    {
-        try
+        if($social_account)
         {
-            if(!$access_token)
-            {
-                $user_social = Socialite::driver(self::PROVIDER)->user();
-                $access_token = $user_social->token;
-                $name_arr = explode(' ', $user_social->name, 2);
-                $user_social['first_name'] = trim($name_arr[0]);
-                $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
-                $this->social_model->addOrUpdateSocialAccount($user_social, self::PROVIDER);
-            }
-
-            Instagram::setAccessToken(new AccessToken(["access_token" => $access_token]));
+            Instagram::setAccessToken(new AccessToken(['access_token' => $social_account->access_token]));
             $social_data = Instagram::users()->getMedia('self')->getRaw('data');
             $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
-            return view('social.instagram', array('data' => $social_data, 'tags' => $tags));
+            if($search)
+                $social_data = InstagramModel::searchPhotos($social_data, $tags, $search);
+
+            return view('parts.social.instagram-photos')
+                ->withData($social_data)
+                ->withTags($tags);
         }
-        catch(\Exception $e)
-        {
-            return $this->index(true);
-        }
+
+        return view('parts.button-auth')->withProvider(self::PROVIDER);
     }
 
-    public function search(Request $request)
+    public function auth()
+    {
+        return Socialite::with(self::PROVIDER)->redirect();
+    }
+
+    public function logout()
+    {
+        $this->social_model->getSocialAccount(self::PROVIDER)->delete();
+        return redirect('photos');
+    }
+
+    public function callback()
     {
         try
         {
-            // get social account
-            $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
-
-            if($social_account)
-            {
-                Instagram::setAccessToken(new AccessToken(["access_token" => $social_account->access_token]));
-                $social_data = Instagram::users()->getMedia('self')->getRaw('data');
-                $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
-                $result_search = InstagramModel::searchPhotos($social_data, $tags, $request->input('text_search'));
-                return view('parts.instagram-photos', array('data' => $result_search, 'tags' => $tags));
-            }
+            $user_social = Socialite::driver(self::PROVIDER)->user();
+            $name_arr = explode(' ', $user_social->name, 2);
+            $user_social['first_name'] = trim($name_arr[0]);
+            $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
+            $this->social_model->addOrUpdateSocialAccount($user_social, self::PROVIDER);
         }
-        catch (\Exception $ex)
+        catch(\Exception $e)
         {
         }
+
+        return redirect('photos');
     }
+
 }

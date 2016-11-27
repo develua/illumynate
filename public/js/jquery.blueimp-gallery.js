@@ -75,7 +75,6 @@
     )
     // Select all links with the same data-gallery attribute:
     var links = $('.photo-gallery > a[data-gallery="' + id + '"]')
-    console.log(links)
     if (options.filter) {
       links = links.filter(options.filter)
     }

@@ -15,9 +15,22 @@ class PocketModel
             $item_tags = TagsHelper::getContentTags($tags, $item->item_id);
 
             if(stripos($item_tags, $text) === false &&
-                    stripos($item->resolved_title, $text) === false &&
-                    stripos($item->excerpt, $text) === false)
-                unset($data[$key]);
+                stripos($item->resolved_title, $text) === false &&
+                stripos($item->excerpt, $text) === false)
+            {
+                $isset_tag = false;
+
+                if(isset($item->tags))
+                    foreach ($item->tags as $tag_item)
+                        if(stripos($tag_item->tag, $text) !== false)
+                        {
+                            $isset_tag = true;
+                            break;
+                        }
+
+                if(!$isset_tag)
+                    unset($data[$key]);
+            }
         }
 
         return $data;

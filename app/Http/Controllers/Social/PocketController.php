@@ -22,76 +22,65 @@ class PocketController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
-
         $this->social_model = new SocialAccount();
         $this->content_tag_model = new ContentTag();
     }
 
-    public function index($innvalid = false)
+    public function index($search = null)
     {
-        // get social account
         $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
 
-        if($social_account && !$innvalid)
-            return $this->callback($social_account->access_token);
+        if($social_account)
+        {
+            $pockpack = new Pockpack(env('POCKET_CONSUMER_KEY'), $social_account->access_token);
+            $social_data = $pockpack->retrieve(['detailType' => 'complete'])->list;
+            $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
+            if($search)
+                $social_data = PocketModel::searchContent($social_data, $tags, $search);
+
+            return view('parts.social.pocket-content')
+                ->withData($social_data)
+                ->withTags($tags);
+        }
+
+        return view('parts.button-auth')->withProvider(self::PROVIDER);
+    }
+
+    public function auth()
+    {
         $pockpack = new PockpackAuth();
         $request_token = $pockpack->connect(env('POCKET_CONSUMER_KEY'));
         $callback_url = env("POCKET_REDIRECT_URI").'?request_token='.$request_token;
         $redirect_url = 'https://getpocket.com/auth/authorize?request_token='.$request_token.'&redirect_uri='.$callback_url;
-
         return redirect($redirect_url);
     }
 
-    public function callback($access_token = null)
+    public function logout()
+    {
+        $this->social_model->getSocialAccount(self::PROVIDER)->delete();
+        return redirect('articles');
+    }
+
+    public function callback()
     {
         try
         {
-            if (!$access_token)
-            {
-                $request_token = Input::get('request_token');
-                $pockpack = new PockpackAuth();
-                $response_data = $pockpack->receiveTokenAndUsername(env('POCKET_CONSUMER_KEY'), $request_token);
-                $user_social = new User();
-                $user_social->token = $access_token = $response_data['access_token'];
-                $name_arr = explode(' ', $response_data['username'], 2);
-                $user_social['first_name'] = trim($name_arr[0]);
-                $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
-                $this->social_model->addOrUpdateSocialAccount($user_social, self::PROVIDER);
-            }
-
-            $pockpack = new Pockpack(env('POCKET_CONSUMER_KEY'), $access_token);
-            $data = $pockpack->retrieve()->list;
-            $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
-
-            return view('social.pocket', array('data' => $data, 'tags' => $tags));
+            $request_token = Input::get('request_token');
+            $pockpack = new PockpackAuth();
+            $response_data = $pockpack->receiveTokenAndUsername(env('POCKET_CONSUMER_KEY'), $request_token);
+            $user_social = new User();
+            $user_social->token = $response_data['access_token'];
+            $name_arr = explode(' ', $response_data['username'], 2);
+            $user_social['first_name'] = trim($name_arr[0]);
+            $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
+            $this->social_model->addOrUpdateSocialAccount($user_social, self::PROVIDER);
         }
         catch(\Exception $e)
         {
-            return $this->index(true);
         }
+
+        return redirect('articles');
     }
 
-    public function search(Request $request)
-    {
-        try
-        {
-            // get social account
-            $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
-
-            if($social_account)
-            {
-                $pockpack = new Pockpack(env('POCKET_CONSUMER_KEY'), $social_account->access_token);
-                $data = $pockpack->retrieve()->list;
-                $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
-
-                $result_search = PocketModel::searchContent($data, $tags, $request->input('text_search'));
-                return view('parts.pocket-content', array('data' => $result_search, 'tags' => $tags));
-            }
-        }
-        catch (\Exception $ex)
-        {
-        }
-    }
 }

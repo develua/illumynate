@@ -1,0 +1,1 @@
+<a href="/{{$provider}}/auth" class="btn btn-success">Auth in {{ucfirst($provider)}}</a>

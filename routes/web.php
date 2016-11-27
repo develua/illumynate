@@ -11,30 +11,55 @@
 |
 */
 
-Route::get('/', function () {
-    return Auth::check() ? view('home') : view('auth.login');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::match(['get', 'post'], '/search', 'SearchController@index');
+Route::group(['middleware' => 'auth'], function()
+{
+    Route::get('/', function () {
+        return view('home');
+    });
 
-Route::get('/facebook', 'Social\FacebookController@index');
-Route::get('/facebook/callback', 'Social\FacebookController@callback');
+    Route::get('photos', function()
+    {
+        return view('photos');
+    });
 
-Route::get('/instagram', 'Social\InstagramController@index');
-Route::get('/instagram/callback', 'Social\InstagramController@callback');
+    Route::get('articles', function()
+    {
+        return view('articles');
+    });
 
-Route::get('/pocket', 'Social\PocketController@index');
-Route::get('/pocket/callback', 'Social\PocketController@callback');
+    Route::get('search/{search?}', function()
+    {
+        return view('search');
+    });
 
-Route::get('/pinterest', 'Social\PinterestController@index');
-Route::get('/pinterest/callback', 'Social\PinterestController@callback');
+    Route::get('settings', 'SettingsController@index');
 
-// API
-Route::post('/tags/update', 'TagsController@update');
-Route::post('/facebook/search/', 'Social\FacebookController@search');
-Route::post('/instagram/search/', 'Social\InstagramController@search');
-Route::post('/pinterest/search/', 'Social\PinterestController@search');
-Route::post('/pocket/search/', 'Social\PocketController@search');
+    Route::get('facebook', 'Social\FacebookController@index');
+    Route::get('facebook/index/{search?}', 'Social\FacebookController@index');
+    Route::get('facebook/auth', 'Social\FacebookController@auth');
+    Route::get('facebook/logout', 'Social\FacebookController@logout');
+    Route::get('facebook/callback', 'Social\FacebookController@callback');
+
+    Route::get('instagram', 'Social\InstagramController@index');
+    Route::get('instagram/index/{search?}', 'Social\InstagramController@index');
+    Route::get('instagram/auth', 'Social\InstagramController@auth');
+    Route::get('instagram/logout', 'Social\InstagramController@logout');
+    Route::get('instagram/callback', 'Social\InstagramController@callback');
+
+    Route::get('pocket', 'Social\PocketController@index');
+    Route::get('pocket/index/{search?}', 'Social\PocketController@index');
+    Route::get('pocket/auth', 'Social\PocketController@auth');
+    Route::get('pocket/logout', 'Social\PocketController@logout');
+    Route::get('pocket/callback', 'Social\PocketController@callback');
+
+    Route::get('pinterest', 'Social\PinterestController@index');
+    Route::get('pinterest/index/{search?}', 'Social\PinterestController@index');
+    Route::get('pinterest/auth', 'Social\PinterestController@auth');
+    Route::get('pinterest/logout', 'Social\PinterestController@logout');
+    Route::get('pinterest/callback', 'Social\PinterestController@callback');
+
+    Route::get('tags/update', 'TagsController@update');
+
+});

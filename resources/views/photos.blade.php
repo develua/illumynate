@@ -15,10 +15,17 @@
 @endsection
 
 @section('content')
-    <div class="panel-heading">Instagram</div>
+    <div class="panel-heading">Facebook <a href="/facebook/logout" class="btn btn-danger btn-xs">Logout</a></div>
     <div class="panel-body">
-        <div class="photo-gallery">
-            @include('parts.instagram-photos')
+        <div class="photo-gallery facebook-block">
+            Not found photos
+        </div>
+    </div>
+
+    <div class="panel-heading">Instagram <a href="/instagram/logout" class="btn btn-danger btn-xs">Logout</a></div>
+    <div class="panel-body">
+        <div class="photo-gallery instagram-block">
+            Not found photos
         </div>
     </div>
 @endsection

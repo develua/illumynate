@@ -32,14 +32,14 @@
     <div class="panel-heading">Pocket</div>
     <div class="panel-body">
         <div class="articles-block pocket-block">
-            Not found photos
+            Not found articles
         </div>
     </div>
 
     <div class="panel-heading">Pinterest</div>
     <div class="panel-body">
         <div class="articles-block pinterest-block">
-            Not found photos
+            Not found articles
         </div>
     </div>
 @endsection

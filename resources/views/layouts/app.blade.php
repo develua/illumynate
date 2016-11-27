@@ -56,15 +56,12 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li>
-                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/search') }}">
-                                {{ csrf_field() }}
-                                <div class="search-input input-group">
-                                    <input type="text" name="text_search" class="form-control input-sm" value="{{@$text_search}}" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-secondary btn-sm" id="btn-search" type="submit">GO</button>
-                                    </span>
-                                </div>
-                            </form>
+                            <div class="search-input input-group">
+                                <input type="text" name="search" class="form-control input-sm" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary btn-sm" id="btn-search" type="submit">GO</button>
+                                </span>
+                            </div>
                         </li>
                         <li>
                             <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -110,29 +107,13 @@
                                     <a href="/"><i class="glyphicon glyphicon-home"></i>Home</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="menu-two-level"><i class="glyphicon glyphicon-eye-open"></i>Photos</a>
-                                    <ul class="nav">
-                                        <li>
-                                            <a href="/facebook"><i class="glyphicon glyphicon-user"></i>Facebook</a>
-                                        </li>
-                                        <li>
-                                            <a href="/instagram"><i class="glyphicon glyphicon-user"></i>Instagram</a>
-                                        </li>
-                                    </ul>
+                                    <a href="/photos" class="menu-two-level"><i class="glyphicon glyphicon-eye-open"></i>Photos</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="menu-two-level"><i class="glyphicon glyphicon-align-justify"></i>Articles</a>
-                                    <ul class="nav">
-                                        <li>
-                                            <a href="/pocket"><i class="glyphicon glyphicon-user"></i>Pocket</a>
-                                        </li>
-                                        <li>
-                                            <a href="/pinterest"><i class="glyphicon glyphicon-user"></i>Pinterest</a>
-                                        </li>
-                                    </ul>
+                                    <a href="/articles" class="menu-two-level"><i class="glyphicon glyphicon-align-justify"></i>Articles</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="glyphicon glyphicon-cog"></i>Settings</a>
+                                    <a href="/settings"><i class="glyphicon glyphicon-cog"></i>Settings</a>
                                 </li>
                             </ul>
                         </div>
