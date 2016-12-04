@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\SocialHelper;
 use App\Helpers\TagsHelper;
 
 class InstagramModel
@@ -11,26 +12,19 @@ class InstagramModel
         foreach ($data as $key => $media)
             if($media['type'] == 'image')
             {
-                $photo_tags = TagsHelper::getContentTags($tags, $media['id']);
+                $data_array = [
+                    TagsHelper::getContentTags($tags, $media['id']),
+                    @$media['caption']['text'],
+                    @$media['location']['name'],
+                    date('m/d/Y H:i:s', $media['created_time'])
+                ];
 
-                if(stripos($photo_tags, $text) === false &&
-                    stripos(@$media['caption']['text'], $text) === false &&
-                    stripos(@$media['location']['name'], $text) === false &&
-                    stripos(date('m/d/Y H:i:s', $media['created_time']), $text) === false)
-                {
-                    $isset_name = false;
+                if(isset($media['users_in_photo']))
+                    foreach($media['users_in_photo'] as $people)
+                        $data_array[] = @$people['user']['username'];
 
-                    if(isset($media['users_in_photo']))
-                        foreach($media['users_in_photo'] as $people)
-                            if(stripos(@$people['user']['username'], $text) !== false)
-                            {
-                                $isset_name = true;
-                                break;
-                            }
-
-                    if(!$isset_name)
-                        unset($data[$key]);
-                }
+                if(!SocialHelper::issetWordsInData($data_array, $text))
+                    unset($data[$key]);
             }
 
         return $data;

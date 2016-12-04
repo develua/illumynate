@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\SocialHelper;
 use App\Helpers\TagsHelper;
 
 class FacebookModel
@@ -10,30 +11,28 @@ class FacebookModel
     {
         foreach ($data as $key => $photo)
         {
-            $photo_tags = TagsHelper::getContentTags($tags, $photo['id']);
+            $data_array = [
+                TagsHelper::getContentTags($tags, $photo['id']),
+                @$photo['name'],
+                @$photo['place']['name'],
+                @$photo['place']['location']['country'],
+                @$photo['place']['location']['state'],
+                @$photo['place']['location']['city'],
+                @$photo['place']['location']['street'],
+                @$photo['event']['name'],
+                @$photo['event']['location']['country'],
+                @$photo['event']['location']['state'],
+                @$photo['event']['location']['city'],
+                @$photo['event']['location']['street'],
+                $photo['created_time']
+            ];
 
-            if(stripos($photo_tags, $text) === false &&
-                stripos(@$photo['name'], $text) === false &&
-                stripos(@$photo['place']['name'], $text) === false &&
-                stripos(@$photo['place']['location']['country'], $text) === false &&
-                stripos(@$photo['place']['location']['state'], $text) === false &&
-                stripos(@$photo['place']['location']['city'], $text) === false &&
-                stripos(@$photo['place']['location']['street'], $text) === false &&
-                stripos($photo['created_time'], $text) === false)
-            {
-                $isset_name = false;
+            if(isset($photo['tags']['data']))
+                foreach($photo['tags']['data'] as $people)
+                    $data_array[] = $people['name'];
 
-                if(isset($photo['tags']['data']))
-                    foreach($photo['tags']['data'] as $people)
-                        if(stripos($people['name'], $text) !== false)
-                        {
-                            $isset_name = true;
-                            break;
-                        }
-
-                if(!$isset_name)
-                    unset($data[$key]);
-            }
+            if(!SocialHelper::issetWordsInData($data_array, $text))
+                unset($data[$key]);
         }
 
         return $data;

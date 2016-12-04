@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\SocialHelper;
 use App\Helpers\TagsHelper;
 
 class PinterestModel
@@ -10,10 +11,12 @@ class PinterestModel
     {
         foreach ($data as $key => $item)
         {
-            $item_tags = TagsHelper::getContentTags($tags, $item->id);
+            $data_array = [
+                TagsHelper::getContentTags($tags, $item->id),
+                $item->note
+            ];
 
-            if(stripos($item_tags, $text) === false &&
-                stripos($item->note, $text) === false)
+            if(!SocialHelper::issetWordsInData($data_array, $text))
                 unset($data[$key]);
         }
 

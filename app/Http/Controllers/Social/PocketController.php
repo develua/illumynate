@@ -26,7 +26,7 @@ class PocketController extends Controller
         $this->content_tag_model = new ContentTag();
     }
 
-    public function index($search = null)
+    public function index(Request $request)
     {
         $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
 
@@ -36,8 +36,8 @@ class PocketController extends Controller
             $social_data = $pockpack->retrieve(['detailType' => 'complete'])->list;
             $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
-            if($search)
-                $social_data = PocketModel::searchContent($social_data, $tags, $search);
+            if(!empty($request->input('text-search')))
+                $social_data = PocketModel::searchContent($social_data, $tags, $request->input('text-search'));
 
             return view('parts.social.pocket-content')
                 ->withData($social_data)

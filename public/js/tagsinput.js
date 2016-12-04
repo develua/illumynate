@@ -4,7 +4,7 @@ $('#blueimp-gallery, .pocket-item, .pinterest-item')
 function initTagsInput()
 {
     $('#blueimp-gallery, .pocket-item, .pinterest-item').find('input[data-role=tagsinput]').tagsinput({
-        confirmKeys: [13, 32],
+        confirmKeys: [13],
         maxTags: 10,
         maxChars: 20,
         trimValue: true
@@ -21,8 +21,11 @@ function saveTags()
 
     $.ajax({
         url: '/tags/update',
-        type: 'get',
+        type: 'post',
         contentType: "application/json; charset=utf-8",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')
+        },
         data: JSON.stringify({
             content_id: $tagsInput.attr('data-content-id'),
             provider: $tagsInput.attr('data-provider'),

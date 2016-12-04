@@ -130,7 +130,9 @@ body {
 
 .pinterest-item
 {
-    float: left;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
     margin: 0 10px 10px 0;
     background: #ebebeb;
     border-radius: 7px;
@@ -171,15 +173,17 @@ body {
 
 .pocket-item
 {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
     width: 240px;
-    float: left;
+    height: auto;
     margin: 0 15px 15px 0;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
     background: #F6F9FB;
     padding: 10px;
-    text-align: left;
 }
 
 .pocket-item:hover
@@ -230,11 +234,30 @@ body {
     display: none;
 }
 
-.photo-gallery > a > img
+.photo-gallery .content-item
 {
     position: relative;
     display: inline-block;
-    margin-top: 5px;
+    margin-right: 5px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+.photo-gallery .content-item img
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.photo-gallery .content-item .portrait
+{
+    width: 100%;
+    height: auto;
 }
 
 .photo-gallery, .articles-block

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\SocialHelper;
 use App\Helpers\TagsHelper;
 
 class PocketModel
@@ -12,25 +13,18 @@ class PocketModel
 
         foreach ($data as $key => $item)
         {
-            $item_tags = TagsHelper::getContentTags($tags, $item->item_id);
+            $data_array = [
+                TagsHelper::getContentTags($tags, $item->item_id),
+                $item->resolved_title,
+                $item->excerpt
+            ];
 
-            if(stripos($item_tags, $text) === false &&
-                stripos($item->resolved_title, $text) === false &&
-                stripos($item->excerpt, $text) === false)
-            {
-                $isset_tag = false;
+            if(isset($item->tags))
+                foreach ($item->tags as $tag_item)
+                    $data_array[] = $tag_item->tag;
 
-                if(isset($item->tags))
-                    foreach ($item->tags as $tag_item)
-                        if(stripos($tag_item->tag, $text) !== false)
-                        {
-                            $isset_tag = true;
-                            break;
-                        }
-
-                if(!$isset_tag)
-                    unset($data[$key]);
-            }
+            if(!SocialHelper::issetWordsInData($data_array, $text))
+                unset($data[$key]);
         }
 
         return $data;

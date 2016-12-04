@@ -1,10 +1,11 @@
 @foreach ($data as $media)
     @if($media['type'] == 'image')
+        <div class="content-item">
             <a href="{{$media['images']['standard_resolution']['url'] }}" data-gallery="">
                 <img src="{{$media['images']['standard_resolution']['url'] }}" height="150"/>
             </a>
             <div class="photo-caption">
-                <input name="tags" type="text" placeholder="You Tags" data-role="tagsinput"
+                <input name="tags" type="text" placeholder="Custom Tags" data-role="tagsinput"
                        value="{{TagsHelper::getContentTags($tags, $media['id'])}}"
                        data-content-id="{{$media['id']}}" data-provider="instagram"/>
                 @if(isset($media['caption']['text']))
@@ -13,7 +14,7 @@
                 @if(isset($media['location']['name']))
                     <p>Location: {{$media['location']['name']}}</p>
                 @endif
-                <p>Data: {{date('m/d/Y H:i:s', $media['created_time'])}}</p>
+                <p>Date: {{date('m/d/Y H:i:s', $media['created_time'])}}</p>
                 @if($media['users_in_photo'])
                     <p>
                         People:
@@ -23,6 +24,6 @@
                     </p>
                 @endif
             </div>
-        </figure>
+        </div>
     @endif
 @endforeach

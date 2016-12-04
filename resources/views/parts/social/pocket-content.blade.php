@@ -11,7 +11,7 @@
                 </p>
             @endif
         </a>
-        <input name="tags" type="text" placeholder="You Tags" data-role="tagsinput"
+        <input name="tags" type="text" placeholder="Custom Tags" data-role="tagsinput"
                value="{{TagsHelper::getContentTags($tags, $item->item_id)}}"
                data-content-id="{{$item->item_id}}" data-provider="pocket"/>
     </div>

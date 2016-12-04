@@ -23,7 +23,7 @@ class PinterestController extends Controller
         $this->content_tag_model = new ContentTag();
     }
 
-    public function index($search = null)
+    public function index(Request $request)
     {
         $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
 
@@ -31,11 +31,11 @@ class PinterestController extends Controller
         {
             $pinterest = new Pinterest(env('PINTEREST_KEY'), env('PINTEREST_SECRET'));
             $pinterest->auth->setOAuthToken($social_account->access_token);
-            $social_data = $pinterest->users->getMePins(array('fields' => 'note,url,image'));
+            $social_data = $pinterest->users->getMePins(array('fields' => 'note,url,image,created_at'));
             $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
-            if($search)
-                $social_data = PinterestModel::searchContent($social_data, $tags, $search);
+            if(!empty($request->input('text-search')))
+                $social_data = PinterestModel::searchContent($social_data, $tags, $request->input('text-search'));
 
             return view('parts.social.pinterest-content')
                 ->withData($social_data)

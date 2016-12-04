@@ -24,7 +24,7 @@ class InstagramController extends Controller
         $this->content_tag_model = new ContentTag();
     }
 
-    public function index($search = null)
+    public function index(Request $request)
     {
         $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
 
@@ -34,8 +34,8 @@ class InstagramController extends Controller
             $social_data = Instagram::users()->getMedia('self')->getRaw('data');
             $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
-            if($search)
-                $social_data = InstagramModel::searchPhotos($social_data, $tags, $search);
+            if(!empty($request->input('text-search')))
+                $social_data = InstagramModel::searchPhotos($social_data, $tags, $request->input('text-search'));
 
             return view('parts.social.instagram-photos')
                 ->withData($social_data)
