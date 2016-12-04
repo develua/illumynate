@@ -15,15 +15,15 @@ class FacebookModel
                 TagsHelper::getContentTags($tags, $photo['id']),
                 @$photo['name'],
                 @$photo['place']['name'],
-                @$photo['place']['location']['country'],
+                /*@$photo['place']['location']['country'],
                 @$photo['place']['location']['state'],
                 @$photo['place']['location']['city'],
-                @$photo['place']['location']['street'],
+                @$photo['place']['location']['street'],*/
                 @$photo['event']['name'],
-                @$photo['event']['location']['country'],
+                /*@$photo['event']['location']['country'],
                 @$photo['event']['location']['state'],
                 @$photo['event']['location']['city'],
-                @$photo['event']['location']['street'],
+                @$photo['event']['location']['street'],*/
                 $photo['created_time']
             ];
 

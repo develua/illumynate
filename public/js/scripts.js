@@ -73,6 +73,12 @@ $(function()
                     return;
                 }
 
+                if(data.length < 100)
+                {
+                    $('.' + provider + '-block').html(data);
+                    return;
+                }
+
                 $wrap = $('<div></div>').append(data);
 
                 soialContent[provider] = {

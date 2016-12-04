@@ -16,7 +16,7 @@
                     Location: {{$photo['place']['name']}}
                 @endif
 
-                @if(isset($photo['place']['location']['country']))
+                {{--@if(isset($photo['place']['location']['country']))
                     {{$photo['place']['location']['country']}}
                 @endif
 
@@ -30,14 +30,14 @@
 
                 @if(isset($photo['place']['location']['street']))
                     {{$photo['place']['location']['street']}}
-                @endif
+                @endif--}}
             </p>
             <p>
                 @if(isset($photo['event']) && isset($photo['event']['place']))
                     Event location: {{$photo['event']['place']['name']}}
                 @endif
 
-                @if(isset($photo['event']['location']['country']))
+                {{--@if(isset($photo['event']['location']['country']))
                     {{$photo['event']['location']['country']}}
                 @endif
 
@@ -51,7 +51,7 @@
 
                 @if(isset($photo['event']['location']['street']))
                     {{$photo['event']['location']['street']}}
-                @endif
+                @endif--}}
             </p>
             <p>Date: {{date('m/d/Y H:i:s', strtotime($photo['created_time']))}}</p>
             @if(isset($photo['tags']['data']))
