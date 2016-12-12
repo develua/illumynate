@@ -1,6 +1,6 @@
 @foreach ($data as $photo)
     <div class="content-item">
-        <a href="{{$photo['images'][0]['source']}}" data-gallery="">
+        <a href="{{$photo['images'][0]['source']}}" data-gallery="facebook">
             <img src="{{$photo['images'][0]['source']}}"
                  class="{{$photo['images'][0]['height'] > $photo['images'][0]['width'] ? 'portrait' : ''}}"/>
         </a>
@@ -65,3 +65,5 @@
         </div>
     </div>
 @endforeach
+
+@include('parts.content-pagination')

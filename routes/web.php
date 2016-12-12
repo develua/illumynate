@@ -15,7 +15,9 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function()
 {
-    Route::get('/', 'HomeController@index');
+    Route::get('home', 'HomeController@index');
+    Route::get('photos', 'PhotosController@index');
+    Route::get('articles', 'ArticlesController@index');
     Route::get('settings', 'SettingsController@index');
 
     Route::match(['get', 'post'], 'search', 'SearchController@index');
@@ -42,13 +44,9 @@ Route::group(['middleware' => 'auth'], function()
 
     Route::post('tags/update', 'TagsController@update');
 
-    Route::get('photos', function()
+    Route::get('/', function()
     {
-        return view('photos');
+        return redirect('/home');
     });
 
-    Route::get('articles', function()
-    {
-        return view('articles');
-    });
 });

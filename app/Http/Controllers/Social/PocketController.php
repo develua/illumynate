@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Social;
 
+use App\Helpers\CacheFile;
 use Illuminate\Http\Request;
 
 use App\Models\PocketModel;
@@ -36,12 +37,28 @@ class PocketController extends Controller
             $social_data = $pockpack->retrieve(['detailType' => 'complete'])->list;
             $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
-            if(!empty($request->input('text-search')))
-                $social_data = PocketModel::searchContent($social_data, $tags, $request->input('text-search'));
+            $text_search = $request->input('text-search');
+            $new_content = $request->input('new-content');
 
-            return view('parts.social.pocket-content')
+            if(!empty($text_search))
+                $social_data = PocketModel::searchContent($social_data, $tags, $request->input('text-search'));
+            else if(!empty($new_content))
+            {
+                $social_data = PocketModel::getNewContent($social_data, $social_account['last_view']);
+                SocialAccount::updateTimeLastView(self::PROVIDER);
+            }
+
+            $num_pages = round(count($social_data) / 9, 0, PHP_ROUND_HALF_UP);
+            $content = CacheFile::tremSpace(view('parts.social.pocket-content')
                 ->withData($social_data)
-                ->withTags($tags);
+                ->withTags($tags)
+                ->withProvider(self::PROVIDER)
+                ->withNumPages($num_pages));
+
+            if(empty($text_search) && empty($new_content))
+                CacheFile::saveContent(self::PROVIDER, $content);
+
+            return $content;
         }
 
         return view('parts.button-auth')->withProvider(self::PROVIDER);
@@ -58,7 +75,12 @@ class PocketController extends Controller
 
     public function logout()
     {
-        $this->social_model->getSocialAccount(self::PROVIDER)->delete();
+        $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
+        if($social_account)
+        {
+            $social_account->delete();
+            CacheFile::deleteCache(self::PROVIDER);
+        }
         return redirect('articles');
     }
 
@@ -71,9 +93,7 @@ class PocketController extends Controller
             $response_data = $pockpack->receiveTokenAndUsername(env('POCKET_CONSUMER_KEY'), $request_token);
             $user_social = new User();
             $user_social->token = $response_data['access_token'];
-            $name_arr = explode(' ', $response_data['username'], 2);
-            $user_social['first_name'] = trim($name_arr[0]);
-            $user_social['last_name'] = isset($name_arr[1]) ? trim($name_arr[1]) : null;
+            $user_social->email = $response_data['username'];
             $this->social_model->addOrUpdateSocialAccount($user_social, self::PROVIDER);
         }
         catch(\Exception $e)

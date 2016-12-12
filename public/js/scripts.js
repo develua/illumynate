@@ -1,22 +1,25 @@
 $(function()
 {
-    var soialContent = new Array();
-
-    if(window.location.pathname == '/photos')
+    switch(window.location.pathname)
     {
-        $('.photo-gallery, .articles-block').empty().append('<img src="../img/loader.gif" width="48"/>');
-        getSocialData('get', 'facebook', 'photos', '');
-        getSocialData('get', 'instagram', 'photos', '');
-    }
-    else if(window.location.pathname == '/articles')
-    {
-        $('.photo-gallery, .articles-block').empty().append('<img src="../img/loader.gif" width="48"/>');
-        getSocialData('get', 'pocket', 'articles', '');
-        getSocialData('get', 'pinterest', 'articles', '');
-    }
-    else if(window.location.pathname == '/search')
-    {
-        searchContent();
+        case '/photos':
+            lessContentItem('facebook', 'photos', 0, 25);
+            lessContentItem('instagram', 'photos', 0, 25);
+            getSocialData('get', 'facebook', 'photos');
+            getSocialData('get', 'instagram', 'photos');
+            break;
+        case '/articles':
+            lessContentItem('pocket', 'articles', 0, 9);
+            lessContentItem('pinterest', 'articles', 0, 9);
+            getSocialData('get', 'pocket', 'articles');
+            getSocialData('get', 'pinterest', 'articles');
+            break;
+        case '/search':
+            searchContent();
+            break;
+        case '/home':
+            callAllSocialData('new-content=true');
+            break;
     }
 
     $('#btn-search').click(function(e)
@@ -47,24 +50,27 @@ $(function()
         if(!text.length)
             return;
 
-        $('.photo-gallery, .articles-block').empty().append('<img src="../img/loader.gif" width="48"/>');
-        getSocialData('post', 'facebook', 'photos', text);
-        getSocialData('post', 'instagram', 'photos', text);
-        getSocialData('post', 'pocket', 'articles', text);
-        getSocialData('post', 'pinterest', 'articles', text);
+        callAllSocialData('text-search=' + text);
     }
 
-    function getSocialData(method, provider, typeItem, text)
+    function callAllSocialData(data)
     {
-        var data = (text.length) ? 'text-search=' + text : '';
+        $('.photo-gallery, .articles-block').empty().append('<img src="../img/loader.gif" width="48"/>');
+        getSocialData('post', 'facebook', 'photos', data);
+        getSocialData('post', 'instagram', 'photos', data);
+        getSocialData('post', 'pocket', 'articles', data);
+        getSocialData('post', 'pinterest', 'articles', data);
+    }
 
+    function getSocialData(method, provider, typeItem, sendData)
+    {
         $.ajax({
             url: '/' + provider,
             type: method,
             headers: {
                 'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')
             },
-            data: data,
+            data: sendData,
             success: function(data)
             {
                 if(!data)
@@ -73,86 +79,80 @@ $(function()
                     return;
                 }
 
-                if(data.length < 100)
-                {
-                    $('.' + provider + '-block').html(data);
-                    return;
-                }
+                $('.' + provider + '-block').html(data);
+                lessContentItem('facebook', 'photos', 0, 25);
+                lessContentItem('instagram', 'photos', 0, 25);
+                lessContentItem('pocket', 'articles', 0, 9);
+                lessContentItem('pinterest', 'articles', 0, 9);
 
-                $wrap = $('<div></div>').append(data);
-
-                soialContent[provider] = {
-                    pageIndex: 0,
-                    html: $wrap.find('.content-item, .pinterest-item, .pocket-item')
-                };
-
-                showContent(provider);
+                initTagsInput();
+                $('.pagination li').removeClass('disabled');
             }
         });
     }
 
-    function showContent(provider)
+    function lessContentItem(provider, typeItem, start, end)
     {
-        var numElement = 25;
-        var content = soialContent[provider];
-        var numPages = Math.ceil(content.html.length / numElement);
-        var btnActive = (numPages > 5) ? content.pageIndex + 1 : content.pageIndex;
-
-        // add pagination
-        $pagination = $('<div><ul class="pagination" data-provider="' + provider + '"></ul></div>');
-
-        for(var i = 0; i < numPages; i++)
-            $pagination.find('ul').append('<li><a href="#">' + (i + 1)+ '</a></li>');
-
-        if(numPages > 5)
-        {
-            // show 5 active button
-            var start = (content.pageIndex > 2) ? (content.pageIndex < numPages - 2 ? content.pageIndex - 2 : numPages - 5) : 0;
-            var end = (content.pageIndex > 2) ? content.pageIndex + 3 : start + 5;
-            $pagination.find('li').hide().slice(start, end).show();
-
-            // add arrow
-            $pagination.find('ul').prepend('<li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>');
-            $pagination.find('ul').append('<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>');
-        }
-
-        $pagination.find('li').eq(btnActive).addClass('active');
-
-        // show content
-        start = (content.pageIndex + 1) * numElement - numElement;
-        end = (content.pageIndex + 1) * numElement;
-        $elements = content.html.slice(start, end);
-
-        // add content
-        $block = $('.' + provider + '-block').empty().append($elements);
-
-        // show pagination
-        if(numPages > 1)
-            $block.append($pagination)
-
-        initTagsInput();
+        if(typeItem == 'photos')
+            $('.' + provider + '-block .content-item').hide().slice(start, end).show();
+        else
+            $('.' + provider + '-block .' + provider + '-item').hide().slice(start, end).show();
     }
 
     $('.panel-body').on('click', '.pagination a', function(e)
     {
-        e.preventDefault();
+        if($(this).parent().hasClass('disabled'))
+        {
+            e.preventDefault();
+            return;
+        }
 
-        var numElement = 25;
+        var parent = $(this).parents('ul');
         var provider = $(this).parents('ul').attr('data-provider');
-        var content = soialContent[provider];
-        var numPages = Math.ceil(content.html.length / 25);
-        var btnContent = $(this).text();
+        var typeItem = (provider == 'facebook' || provider == 'instagram') ? 'photos' : 'articles';
+        var numElement = (typeItem == 'photos') ? 25 : 9;
+        var numPages = parseInt(parent.find('li[data-num-page]:last').text());
+        var btnText = $(this).text();
+        var btnNum = parseInt(btnText);
+        $btnActive = parent.find('li[class=active]');
 
-        if(btnContent == '«')
-            (content.pageIndex > 0) ? content.pageIndex-- : false;
-        else if(btnContent == '»')
-            (content.pageIndex < numPages - 1) ? content.pageIndex++ : false;
+        if($btnActive.find('a').text() == btnText)
+            return;
+
+        if(btnText == '«')
+        {
+            if(btnNum == 1)
+                return;
+
+            $btnActive.prev().addClass('active');
+            btnNum--;
+        }
+        else if(btnText == '»')
+        {
+            if(btnNum == numPages)
+                return;
+
+            $btnActive.next().addClass('active');
+            btnNum++;
+        }
         else
-            content.pageIndex  = parseInt(btnContent) - 1;
+            $(this).parents('li').addClass('active');
 
-        showContent(provider);
+        var start = btnNum * numElement - numElement;
+        var end = btnNum * numElement;
+        lessContentItem(provider, typeItem, start, end);
+
+        $btnActive.removeClass('active');
+
+        if(numPages > 5)
+        {
+            // show 5 active button
+            start = (btnNum > 3) ? (btnNum < numPages - 2 ? btnNum - 3 : numPages - 5) : 0;
+            end = (btnNum > 3) ? btnNum + 2 : start + 5;
+            parent.find('li[data-num-page]').hide().slice(start, end).show();
+        }
+
     });
-
 
     $('#blueimp-gallery').on('slideend', function (event, index, slide)
     {

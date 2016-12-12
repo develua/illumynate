@@ -29,4 +29,15 @@ class PocketModel
 
         return $data;
     }
+
+    public static function getNewContent($data, $last_view)
+    {
+        $data = get_object_vars($data);
+
+        foreach ($data as $key => $item)
+            if($last_view > $item->time_added)
+                unset($data[$key]);
+
+        return $data;
+    }
 }

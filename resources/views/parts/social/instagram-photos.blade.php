@@ -1,7 +1,7 @@
 @foreach ($data as $media)
     @if($media['type'] == 'image')
         <div class="content-item">
-            <a href="{{$media['images']['standard_resolution']['url'] }}" data-gallery="">
+            <a href="{{$media['images']['standard_resolution']['url'] }}" data-gallery="instagram">
                 <img src="{{$media['images']['standard_resolution']['url'] }}" height="150"/>
             </a>
             <div class="photo-caption">
@@ -27,3 +27,5 @@
         </div>
     @endif
 @endforeach
+
+@include('parts.content-pagination')

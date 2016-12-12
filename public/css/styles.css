@@ -178,7 +178,7 @@ body {
     vertical-align: top;
     width: 240px;
     height: auto;
-    margin: 0 15px 15px 0;
+    margin: 0 10px 10px 0;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
@@ -209,6 +209,12 @@ body {
     text-align: left;
     color: #434343;
     border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.pocket-tags
+{
+    letter-spacing: -10px;
 }
 
 .pocket-tags span
@@ -220,11 +226,13 @@ body {
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
+    margin-right: 5px;
     color: #fff;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     border-radius: .25em;
+    letter-spacing: normal;
 }
 
 /* photo gallery */

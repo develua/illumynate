@@ -9,3 +9,5 @@
                data-content-id="{{$item->id}}" data-provider="pinterest"/>
     </div>
 @endforeach
+
+@include('parts.content-pagination')

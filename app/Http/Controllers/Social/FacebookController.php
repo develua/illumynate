@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Social;
 
+use App\Helpers\CacheFile;
 use App\Models\FacebookModel;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -31,15 +32,30 @@ class FacebookController extends Controller
             $social_data = Facebook::get('me/photos?fields=id,name,images,created_time,event,name_tags,place,tags&type=uploaded&limit=1000', $social_account->access_token)->getDecodedBody();
             $social_data_uploaded = Facebook::get('me/photos?fields=id,name,images,created_time,event,name_tags,place,tags&limit=1000', $social_account->access_token)->getDecodedBody();
             $social_data = array_merge($social_data['data'], $social_data_uploaded['data']);
-
             $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
-            if(!empty($request->input('text-search')))
-                $social_data['data'] = FacebookModel::searchPhotos($social_data, $tags, $request->input('text-search'));
+            $text_search = $request->input('text-search');
+            $new_content = $request->input('new-content');
 
-            return view('parts.social.facebook-photos')
+            if(!empty($text_search))
+                $social_data = FacebookModel::searchPhotos($social_data, $tags, $request->input('text-search'));
+            else if(!empty($new_content))
+            {
+                $social_data = FacebookModel::getNewContent($social_data, $social_account['last_view']);
+                SocialAccount::updateTimeLastView(self::PROVIDER);
+            }
+
+            $num_pages = round(count($social_data) / 25, 0, PHP_ROUND_HALF_UP);
+            $content = CacheFile::tremSpace(view('parts.social.facebook-photos')
                 ->withData($social_data)
-                ->withTags($tags);
+                ->withTags($tags)
+                ->withProvider(self::PROVIDER)
+                ->withNumPages($num_pages));
+
+            if(empty($text_search) && empty($new_content))
+                CacheFile::saveContent(self::PROVIDER, $content);
+
+            return $content;
         }
 
         return view('parts.button-auth')->withProvider(self::PROVIDER);
@@ -52,7 +68,12 @@ class FacebookController extends Controller
 
     public function logout()
     {
-        $this->social_model->getSocialAccount(self::PROVIDER)->delete();
+        $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
+        if($social_account)
+        {
+            $social_account->delete();
+            CacheFile::deleteCache(self::PROVIDER);
+        }
         return redirect('photos');
     }
 

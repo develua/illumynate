@@ -16,27 +16,27 @@
 
 @section('content')
     <div class="panel-heading">Facebook</div>
-    <div class="panel-body">
+    <div class="panel-body" id="facebook">
         <div class="photo-gallery facebook-block">
             Not found photos
         </div>
     </div>
 
     <div class="panel-heading">Instagram</div>
-    <div class="panel-body">
+    <div class="panel-body" id="instagram">
         <div class="photo-gallery instagram-block">
             Not found photos
         </div>
     </div>
 
     <div class="panel-heading">Pocket</div>
-    <div class="panel-body">
+    <div class="panel-body" id="pocket">
         <div class="articles-block pocket-block">
             Not found articles
         </div>
     </div>
 
-    <div class="panel-heading">Pinterest</div>
+    <div class="panel-heading" id="pinterest">Pinterest</div>
     <div class="panel-body">
         <div class="articles-block pinterest-block">
             Not found articles

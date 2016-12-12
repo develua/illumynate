@@ -107,7 +107,7 @@
                         <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <a href="/"><i class="glyphicon glyphicon-home"></i>Home</a>
+                                    <a href="/home"><i class="glyphicon glyphicon-home"></i>Home</a>
                                 </li>
                                 <li>
                                     <a href="/photos" class="menu-two-level"><i class="glyphicon glyphicon-eye-open"></i>Photos</a>

@@ -37,4 +37,13 @@ class FacebookModel
 
         return $data;
     }
+
+    public static function getNewContent($data, $last_view)
+    {
+        foreach ($data as $key => $photo)
+            if($last_view > strtotime($photo['created_time']))
+                unset($data[$key]);
+
+        return $data;
+    }
 }

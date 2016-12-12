@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Social;
 
+use App\Helpers\CacheFile;
 use Illuminate\Http\Request;
 
 use App\Models\PinterestModel;
@@ -34,12 +35,28 @@ class PinterestController extends Controller
             $social_data = $pinterest->users->getMePins(array('fields' => 'note,url,image,created_at'));
             $tags = $this->content_tag_model->getProviderTegs(self::PROVIDER);
 
-            if(!empty($request->input('text-search')))
-                $social_data = PinterestModel::searchContent($social_data, $tags, $request->input('text-search'));
+            $text_search = $request->input('text-search');
+            $new_content = $request->input('new-content');
 
-            return view('parts.social.pinterest-content')
+            if(!empty($text_search))
+                $social_data = PinterestModel::searchContent($social_data, $tags, $request->input('text-search'));
+            else if(!empty($new_content))
+            {
+                $social_data = PinterestModel::getNewContent($social_data, $social_account['last_view']);
+                SocialAccount::updateTimeLastView(self::PROVIDER);
+            }
+
+            $num_pages = round(count($social_data) / 9, 0, PHP_ROUND_HALF_UP);
+            $content = CacheFile::tremSpace(view('parts.social.pinterest-content')
                 ->withData($social_data)
-                ->withTags($tags);
+                ->withTags($tags)
+                ->withProvider(self::PROVIDER)
+                ->withNumPages($num_pages));
+
+            if(empty($text_search) && empty($new_content))
+                CacheFile::saveContent(self::PROVIDER, $content);
+
+            return $content;
         }
 
         return view('parts.button-auth')->withProvider(self::PROVIDER);
@@ -52,7 +69,12 @@ class PinterestController extends Controller
 
     public function logout()
     {
-        $this->social_model->getSocialAccount(self::PROVIDER)->delete();
+        $social_account = $this->social_model->getSocialAccount(self::PROVIDER);
+        if($social_account)
+        {
+            $social_account->delete();
+            CacheFile::deleteCache(self::PROVIDER);
+        }
         return redirect('articles');
     }
 

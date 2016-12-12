@@ -16,3 +16,5 @@
                data-content-id="{{$item->item_id}}" data-provider="pocket"/>
     </div>
 @endforeach
+
+@include('parts.content-pagination')

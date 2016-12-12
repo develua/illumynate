@@ -1,15 +1,17 @@
 $('#blueimp-gallery, .pocket-item, .pinterest-item')
     .on('DOMNodeInserted', 'input[name=tags]', initTagsInput);
 
-function initTagsInput()
+function initTagsInput(select)
 {
-    $('#blueimp-gallery, .pocket-item, .pinterest-item').find('input[data-role=tagsinput]').tagsinput({
+    var select = !select ? '#blueimp-gallery, .pocket-item, .pinterest-item' : select;
+
+    $(select).find('input[data-role=tagsinput]').tagsinput({
         confirmKeys: [13],
         maxTags: 10,
         maxChars: 20,
         trimValue: true
     });
-    $('#blueimp-gallery, .pocket-item, .pinterest-item')
+    $(select)
         .find('input[name=tags]')
         .on('itemAdded', saveTags)
         .on('itemRemoved', saveTags);

@@ -16,30 +16,30 @@
 
 @section('content')
     <div class="panel-heading">New Photos Facebook</div>
-    <div class="panel-body">
+    <div class="panel-body" id="facebook">
         <div class="photo-gallery facebook-block">
-            Not found photos
+            Not found new photos
         </div>
     </div>
 
     <div class="panel-heading">New Photos Instagram</div>
-    <div class="panel-body">
+    <div class="panel-body" id="instagram">
         <div class="photo-gallery instagram-block">
-            Not found photos
+            Not found new photos
         </div>
     </div>
 
     <div class="panel-heading">New Articles Pocket</div>
-    <div class="panel-body">
+    <div class="panel-body" id="pocket">
         <div class="articles-block pocket-block">
-            Not found articles
+            Not found new articles
         </div>
     </div>
 
     <div class="panel-heading">New Articles Pinterest</div>
-    <div class="panel-body">
+    <div class="panel-body" id="pinterest">
         <div class="articles-block pinterest-block">
-            Not found articles
+            Not found new articles
         </div>
     </div>
 @endsection

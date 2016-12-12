@@ -22,7 +22,7 @@ class ContentTagsTable extends Migration
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');
-            $table->unique(array('user_id','provider_id', 'content_id'));
+            $table->unique(array('user_id', 'provider_id', 'content_id'));
         });
     }
 

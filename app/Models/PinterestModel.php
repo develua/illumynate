@@ -22,4 +22,13 @@ class PinterestModel
 
         return $data;
     }
+
+    public static function getNewContent($data, $last_view)
+    {
+        foreach ($data as $key => $item)
+            if($last_view > strtotime($item->created_at))
+                unset($data[$key]);
+
+        return $data;
+    }
 }

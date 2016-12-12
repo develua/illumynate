@@ -12,7 +12,7 @@ class SocialAccount extends Model
     protected $table = 'social_accounts';
 
     protected $fillable = [
-        'user_id', 'provider_id', 'first_name', 'last_name', 'email', 'profile_photo', 'access_token'
+        'user_id', 'provider_id', 'first_name', 'last_name', 'email', 'profile_photo', 'access_token', 'last_view'
     ];
 
     // get SocialAccount where provider
@@ -41,4 +41,15 @@ class SocialAccount extends Model
         $social_account['access_token'] = $user->token;
         $social_account->save();
     }
+
+    // update time last view
+    public static function updateTimeLastView($provider)
+    {
+        $provider_id = Provider::getProviderID($provider);
+        self::where([
+            'user_id' => Auth::user()->id,
+            'provider_id' => $provider_id
+        ])->update(['last_view' => time()]);
+    }
+
 }
